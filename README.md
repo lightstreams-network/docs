@@ -26,21 +26,12 @@ git clone git@github.com:lightstreams-network/docs.git
 Once you have Hugo installed, you can start editing the files in the `content`
 folder.
 
-### Run it locally
-
+### Run local server to check changes
 ```
 hugo server
 ```
 
-### Commit changes
-
-```
-git add .
-git commit -m "Updated xyz"
-```
-
 ### Publish changes
-
 ```
 hugo
 ```
@@ -49,6 +40,13 @@ hugo
 
 ```
 ./deploy-gh-pages
+```
+
+### Commit
+
+```
+git add .
+git commit -m "Updated xyz"
 ```
 
 ## Updating CLI docs
