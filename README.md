@@ -19,7 +19,7 @@ hugo version
 
 ### Clone this repository
 ```
-git clone git@github.com:lightstreams-network/lightstreams-network.github.io.git
+git clone git@github.com:lightstreams-network/docs.git
 ```
 
 ### Edit files in `content`
@@ -32,14 +32,28 @@ folder.
 hugo server
 ```
 
+### Commit changes
+
+```
+git add .
+git commit -m "Updated xyz"
+```
+
 ### Publish changes
 
 ```
 hugo
 ```
 
+### Deploy changes
 
+```
+./deploy-gh-pages
+```
 
+## Updating CLI docs
 
-
-
+```
+rsync -arvzpH ../go-lightstreams/cmd/auto_generated/ ./auto_generated/
+./generate-dir-structure
+```
