@@ -25,7 +25,7 @@ enableMissingTranslationPlaceholders = false
 # languageName = "Français"
 
 [params]
-editURL = "https://github.com/lightstreams-network/docs/"
+editURL = "https://github.com/lightstreams-network/docs/tree/hugo-docs/content/"
 showVisitedLinks = true # default is false
 themeStyle = "original" # "original" or "flex" # default "flex"
 themeVariant = "navy" # choose theme variant "green", "gold" , "gray", "blue" (default)
