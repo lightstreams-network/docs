@@ -22,45 +22,59 @@ Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstream
 
 `IPFS` is a heavily customized decentralised file system enhanced with our award winning **PermissionedBlocks** technology.
 
-## Installing Leth node
+### Install from prebuilt package
 
-### Download MacOS compiled `Leth` and `IPFS` from our AWS S3 Server:
+#### macOS
 
-```bash
+```
 wget "https://s3.amazonaws.com/lightstreams/leth-osx" -O /usr/local/bin/leth
 wget "https://s3.amazonaws.com/lightstreams/ipfs-osx" -O /usr/local/bin/ipfs
+wget "https://s3.amazonaws.com/lightstreams/geth-osx" -O /usr/local/bin/geth
 ```
 
-### Download Liux compiled `Leth` and `IPFS` from our AWS S3 Server:
+#### Linux
 
-```bash
+```
 wget "https://s3.amazonaws.com/lightstreams/leth-linux-amd64" -O /usr/local/bin/leth
 wget "https://s3.amazonaws.com/lightstreams/ipfs-linux-amd64" -O /usr/local/bin/ipfs
+wget "https://s3.amazonaws.com/lightstreams/geth-linux-amd64" -O /usr/local/bin/geth
 ```
 
-### Ensure the executables have all the necessary permissions:
+#### Windows
+
+Not yet available.
+
+### Ensure the executables have all the necessary permissions
 
 ```bash
-chmod u+x /usr/local/bin/leth && chmod u+x /usr/local/bin/ipfs
-```
-
-### Download Geth
-
-Download your OS specific `geth` version 1.8.* from an official [Ethereum downloads page](https://geth.ethereum.org/downloads/).
-
-Unzip and copy the downloaded `geth` executable as well into `/usr/local/bin/`.
-
-Apply permissions:
-
-```bash
+chmod u+x /usr/local/bin/leth
+chmod u+x /usr/local/bin/ipfs
 chmod u+x /usr/local/bin/geth
 ```
 
 ## Validate installed binaries
 
-![binaries versions](/public/images/verify_binaries.png)
+```
+> leth version
+Version: 0.1.0-alpha
 
-Perfect, binaries are successfully executable!
+> ipfs version
+ipfs version 0.4.9-rc2
+
+> geth version
+Geth
+Version: 1.8.20-stable
+Git Commit: 24d727b6d6e2c0cde222fa12155c4a6db5caaf2e
+Architecture: amd64
+Protocol Versions: [63 62]
+Network Id: 1
+Go Version: go1.10.4
+Operating System: linux
+GOPATH=/home/a/go
+GOROOT=/usr/lib/go-1.10
+```
+
+Perfect, binaries are executable!
 
 ## Interacting with Leth node over CLI
 
@@ -400,4 +414,4 @@ leth acl --help
 
 ## Need human help?
 
-We are happy to get you started! Join our [telegram channel](https://t.me/lightstreams) or ask as many questions as you want in our open [forum](http://discuss.lightstreams.network)!
+We are happy to get you started! Join our [telegram channel](https://t.me/lightstreams) or ask as many questions as you want in the [lightstreams forum](http://discuss.lightstreams.network)!

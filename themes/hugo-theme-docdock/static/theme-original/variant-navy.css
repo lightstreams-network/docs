@@ -14,6 +14,10 @@ a {
     color: #ff2855;
 }
 
+#header-wrapper {
+    border-bottom: 0;
+}
+
 #sidebar ul li.active > div > a {
     color: #212a33!important;
 }
@@ -27,6 +31,10 @@ a {
 #sidebar ul.topics > li.active a:hover {
     color: #212a33;
     background: #fff;
+}
+
+#sidebar ul li.active > div > a:hover {
+    color: #212a33 !important;
 }
 
 #sidebar ul li.visited > a .read-icon {
