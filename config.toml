@@ -42,18 +42,13 @@ home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
 pre = "<h3>More</h3>"
-name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+name = "<i class='fa fa-github'></i> <label>Github Docs</label>"
 identifier = "github"
-url = "https://github.com/lightstreams-network/cli-docs"
+url = "https://github.com/lightstreams-network/docs"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-cloud-download'></i> <label>Docs</label>"
-url = "https://wiki.lightstreams.network/"
-weight = 11
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-bookmark'></i> <label>HTTP API</label>"
-identifier = "hugodoc"
-url = "https://wiki.lightstreams.network/docs"
+name = "<i class='fa fa-bookmark'></i> <label>HTTP API Reference</label>"
+identifier = "api"
+url = "https://wiki.lightstreams.network/api-docs"
 weight = 20
