@@ -1,6 +1,7 @@
 +++
-title = "01. Quick Start"
+title = "Quick Start"
 toc = true
+weight = 1
 +++
 
 ## Introduction

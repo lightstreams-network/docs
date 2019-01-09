@@ -1,6 +1,7 @@
 +++
-title = "02. Install"
+title = "Install"
 toc = true
+weight = 2
 +++
 
 ## Install
