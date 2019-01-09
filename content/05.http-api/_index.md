@@ -4,7 +4,7 @@ toc = true
 weight = 5
 +++
 
-## Table of content
+## Table of contents
 - [HTTP API Reference](https://wiki.lightstreams.network/docs)
 
 ## Error Types
