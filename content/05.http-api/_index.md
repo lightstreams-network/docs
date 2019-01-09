@@ -5,7 +5,7 @@ weight = 5
 +++
 
 ## Table of contents
-- [HTTP API Reference](https://wiki.lightstreams.network/docs)
+- [HTTP API Reference](/api-docs)
 
 ## Error Types
 
