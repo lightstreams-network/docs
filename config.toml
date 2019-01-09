@@ -25,7 +25,7 @@ enableMissingTranslationPlaceholders = false
 # languageName = "Français"
 
 [params]
-editURL = "https://github.com/lightstreams-network/go-lightstreams/"
+editURL = "https://github.com/lightstreams-network/docs/"
 showVisitedLinks = true # default is false
 themeStyle = "original" # "original" or "flex" # default "flex"
 themeVariant = "navy" # choose theme variant "green", "gold" , "gray", "blue" (default)
