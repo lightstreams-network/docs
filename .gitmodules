@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:lightstreams-network/lightstreams-network.github.io.git
+	branch = master
