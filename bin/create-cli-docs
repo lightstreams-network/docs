@@ -18,7 +18,10 @@ cmdline() {
     popd
 
     pushd $PROJECTDIR
-        rsync -arvpzH  "$TMP_REPO_PATH/docs/cmd/auto_generated/" "auto_generated"
+        if is_dir "auto_generated"; then
+            rm -rf "auto_generated"
+        fi
+        rsync -arvpzH  "$TMP_REPO_PATH/docs/cmd/auto_generated/" "auto_generated/"
         pushd "content"
             create_docs "../auto_generated" "04.cli-docs"
         popd
@@ -39,9 +42,12 @@ create_docs() {
     local input_dir=$1
     local output_dir=$2
 
+    pushd "$output_dir"
     if is_dir "leth"; then
         rm -rf "leth"
     fi
+    popd
+
     $SCRIPTDIR/$CMD "$input_dir" "$output_dir"
 }
 
