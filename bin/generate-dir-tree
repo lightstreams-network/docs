@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+readonly SCRIPTNAME=$(basename $0)
+readonly SCRIPTDIR=$(readlink -m $(dirname $0))
+readonly ARGS="$@"
+
+cmdline() {
+	local input_folder="$1"
+	local output_folder="$2"
+
+	if ! is_dir $input_folder; then
+		echo "This scripts expects an input folder with .md files"
+		echo "Now: $(pwd)/$input_folder/*"
+		exit 1
+	fi
+
+	create_dir_tree $input_folder $output_folder
+}
+
+usage() {
+	cat <<- EOF
+	usage: $SCRIPTNAME input_folder output_folder
+
+	Converts cobra-generated docs with a flat hierarchy to a deeply nested one,
+	e.g cli_command_other.md becomes cli/command/other/_index.md
+
+	Examples:
+	   Parse and convert all .md files from `auto_generated` to `output`
+	   > $SCRIPTNAME auto_generated output
+
+	EOF
+}
+
+create_dir_tree() {
+	local input_folder="$1"
+	local output_folder="$2"
+
+	for file in ${input_folder}/*; do
+		local file_content="$(replace_links $file $output_folder)"
+	    local file_without_ext=${file:0:-3}
+	    local output_tree_path=$(echo ${file_without_ext} | \
+	    sed -e "s:$input_folder:$output_folder:" \
+	    	-e 's:_:/:g')
+	    # create new directory tree
+	    echo "$output_tree_path"
+	    mkdir -p "$output_tree_path"
+	    prepend_header "$file_content" > "$output_tree_path/_index.md"
+	done
+}
+
+replace_links() {
+	local old_ifs="$IFS"
+	local file="$1"
+	local output_folder=$2
+
+	IFS=""
+	while read -r line || [[ -n "$line" ]]; do
+	    echo $line | \
+	    sed -e "s:](:](/$output_folder/:" \
+	    	-e "s:_:/:g" \
+	    	-e "s:.md:/:"
+	done < "$file"
+	IFS=$old_ifs
+}
+
+################################################################################
+# Prepend header as required by hugo
+# use first line title and format it correctly, e.g.:
+#
+# `## leth command`
+#
+# becomes
+#
+# +++
+# title = "leth command"
+# toc = true
+# +++
+################################################################################
+prepend_header() {
+	local content="$1"
+	local first_line=$(echo -e "$content" | sed -n '1p' | \
+	sed -e "s:##:title =:" \
+		-e 's:\(=\)\([a-z ]*\):\1 "\2":' \
+		-e 's:"[ ]:":')
+	local header="+++\n${first_line}\ntoc = true\n+++\n"
+	echo -e "${header}${content}"
+}
+
+is_dir() {
+	local dir="$1"
+
+	[[ -d $dir ]]
+}
+
+
+is_file() {
+	local file="$1"
+
+	[[ -f $file ]]
+}
+
+main() {
+	local input_folder="$1"
+	local output_folder="$2"
+
+	if [ $# == 0 ]; then
+		usage
+		exit 1
+	fi
+
+	cmdline "$input_folder" "$output_folder"
+}
+
+main $ARGS

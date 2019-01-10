@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+readonly SCRIPTNAME=$(basename $0)
+readonly SCRIPTDIR=$(readlink -m $(dirname $0))
+readonly PROJECTDIR=$SCRIPTDIR/..
+readonly ARGS="$@"
+readonly CMD="generate-dir-tree"
+readonly GO_LIGHTSTREAMS_REPO="git@github.com:lightstreams-network/go-lightstreams.git"
+readonly TMP_REPO_PATH="/tmp/go-lightstreams"
+
+cmdline() {
+    pushd "/tmp"
+        clone_repo $GO_LIGHTSTREAMS_REPO $TMP_REPO_PATH
+    popd
+
+    pushd $PROJECTDIR
+        rsync -arvpzH  "$TMP_REPO_PATH/docs/cmd/auto_generated/" "auto_generated"
+        pushd "content"
+            create_docs "../auto_generated" "04.cli-docs"
+        popd
+    popd
+}
+
+clone_repo() {
+    local go_lightstreams_repo="$1"
+    local tmp_repo_path="$2"
+
+    if is_dir $tmp_repo_path; then
+        rm -rf $tmp_repo_path
+    fi
+    git clone "$go_lightstreams_repo"
+}
+
+create_docs() {
+    local input_dir=$1
+    local output_dir=$2
+
+    if is_dir "leth"; then
+        rm -rf "leth"
+    fi
+    $SCRIPTDIR/$CMD "$input_dir" "$output_dir"
+}
+
+is_dir() {
+    local dir="$1"
+
+    [[ -d $dir ]]
+}
+
+main() {
+    cmdline
+}
+
+main

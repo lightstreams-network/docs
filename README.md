@@ -49,9 +49,11 @@ git add .
 git commit -m "Updated xyz"
 ```
 
-## Updating CLI docs
+## Update CLI docs
 
+Run the create-cli-docs command (for lightstreams developers only:
 ```
-rsync -arvzpH ../go-lightstreams/cmd/auto_generated/ ./auto_generated/
-./generate-dir-structure
+./bin/create-cli-docs
 ```
+Once this is done, follow the instructions above to publish the changes.
+
