@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+readonly SCRIPTNAME=$(basename $0)
+readonly SCRIPTDIR=$(readlink -m $(dirname $0))
+readonly PROJECTDIR=$SCRIPTDIR/..
+
+pushd $PROJECTDIR
+    echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+    # Build the project.
+    hugo
+    # Go To Public folder
+    pushd "public"
+        # Add changes to git.
+        git add .
+        # Commit changes.
+        msg="rebuilding site `date +"%Y-%m-%d %T"`"
+        if [ $# -eq 1 ]
+          then msg="$1"
+        fi
+        git commit -m "$msg"
+        # Push source and build repos.
+        git push
+    # Come Back up to the Project Root
+    popd
+popd
