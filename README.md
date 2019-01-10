@@ -15,34 +15,29 @@ correct version
 hugo version
 ```
 
-## Getting started
+## Contribute to the docs
 
 ### Clone this repository
 ```
 git clone git@github.com:lightstreams-network/docs.git
 ```
 
-### Edit files in `content`
+### 1. Edit files in `content`
 Once you have Hugo installed, you can start editing the files in the `content`
 folder.
 
-### Run local server to check changes
+### 2. Run local server to check changes
 ```
 hugo server
 ```
 
-### Publish changes
-```
-hugo
-```
-
-### Deploy changes
+### 3. Deploy changes
 
 ```
-./deploy-gh-pages
+./bin/deploy-gh-pages
 ```
 
-### Commit
+### 4. Commit
 
 ```
 git add .

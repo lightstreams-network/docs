@@ -81,5 +81,5 @@ leth run --nodeid=1 --network=rinkeby
 ## Create an account
 
 ```
-leth user signup --nodeid=1 --network=sirius
+leth user signup --nodeid=1 --network=rinkeby
 ```
