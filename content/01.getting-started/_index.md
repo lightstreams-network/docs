@@ -18,11 +18,15 @@ Lightstreams Node (`Leth`) is an executable binary compiled from our Lightstream
 
 `Leth` is used for initializing, running, controlling and interacting with the Lightstreams Node (Blockchain + Secured InterPlanetary File System).
 
-`Geth` is currently used as a Rinkeby PoA test network instead of our Lightstreams PoA Test Network due to smoother, go to market strategy with release of an ERC20 PHT token.
+`Geth`[1] is currently used as a Rinkeby PoA test network instead of our Lightstreams PoA Test Network due to smoother, go to market strategy with release of an ERC20 PHT token.
 
-`IPFS` is a heavily customized decentralised file system enhanced with our award winning **PermissionedBlocks** technology.
+`IPFS`[2] is a heavily customized decentralised file system enhanced with our award winning **PermissionedBlocks** technology.
 
 ### Install from prebuilt package
+
+We have compiled binaries for macOS and Linux (Windows not yet available).
+
+**NOTE: You need to install our enhanced version of IPFS for the file storage features to work.**
 
 #### macOS
 
@@ -415,3 +419,8 @@ leth acl --help
 ## Need human help?
 
 We are happy to get you started! Join our [telegram channel](https://t.me/lightstreams) or ask as many questions as you want in the [lightstreams forum](http://discuss.lightstreams.network)!
+
+## License information
+
+- [1] [source code](https://github.com/ethereum/go-ethereum) and licenses ([GPLv3](https://github.com/ethereum/go-ethereum/blob/master/COPYING), [LGPLv3](https://github.com/ethereum/go-ethereum/blob/master/COPYING.LESSER))
+- [2] [MIT License](https://github.com/ipfs/ipfs/blob/master/LICENSE)

@@ -6,7 +6,9 @@ weight = 2
 
 ## Install
 
-We have compiled binaries for macOS and Linux available (Windows not yet available).
+We have compiled binaries for macOS and Linux (Windows not yet available).
+
+**NOTE: You need to install our enhanced version of IPFS for the file storage features to work.**
 
 ### Install from prebuilt package
 
