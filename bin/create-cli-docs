@@ -9,42 +9,65 @@ readonly SCRIPTDIR=$(readlink -m $(dirname $0))
 readonly PROJECTDIR=$SCRIPTDIR/..
 readonly ARGS="$@"
 readonly CMD="generate-dir-tree"
-readonly GO_LIGHTSTREAMS_REPO="git@github.com:lightstreams-network/go-lightstreams.git"
-readonly TMP_REPO_PATH="/tmp/go-lightstreams"
+readonly GO_LIGHSTREAMS_REPO="git@github.com:lightstreams-network/go-lightstreams.git"
+readonly LIGHTCHAIN_REPO="git@github.com:lightstreams-network/lightchain.git"
+readonly GO_LIGHSTREAMS_TMP="/tmp/go-lightstreams"
+readonly LIGHTCHAIN_TMP="/tmp/lightchain"
+readonly CLI_DOCS_DIR="04.cli-docs"
 
 cmdline() {
+    create_docs_leth
+    create_docs_lightchain
+}
+
+create_docs_leth() {
+    create_docs "$GO_LIGHSTREAMS_REPO" "$GO_LIGHSTREAMS_TMP" "leth"
+}
+
+create_docs_lightchain() {
+    create_docs "$LIGHTCHAIN_REPO" "$LIGHTCHAIN_TMP" "lightchain"
+}
+
+create_docs() {
+    local repo="$1"
+    local tmp_repo_path="$2"
+    local subdir="$3"
+
     pushd "/tmp"
-        clone_repo $GO_LIGHTSTREAMS_REPO $TMP_REPO_PATH
+        clone_repo $repo $tmp_repo_path
     popd
 
     pushd $PROJECTDIR
         if is_dir "auto_generated"; then
             rm -rf "auto_generated"
         fi
-        rsync -arvpzH  "$TMP_REPO_PATH/docs/cmd/auto_generated/" "auto_generated/"
+        rsync -arvpzH  "$tmp_repo_path/docs/cmd/auto_generated/" "auto_generated/"
+
         pushd "content"
-            create_docs "../auto_generated" "04.cli-docs"
+            convert_docs "../auto_generated" "$CLI_DOCS_DIR" "$subdir"
         popd
     popd
 }
 
+
 clone_repo() {
-    local go_lightstreams_repo="$1"
+    local repo="$1"
     local tmp_repo_path="$2"
 
     if is_dir $tmp_repo_path; then
         rm -rf $tmp_repo_path
     fi
-    git clone "$go_lightstreams_repo"
+    git clone "$repo"
 }
 
-create_docs() {
+convert_docs() {
     local input_dir=$1
     local output_dir=$2
+    local clean_dir=$3
 
     pushd "$output_dir"
-    if is_dir "leth"; then
-        rm -rf "leth"
+    if is_dir "$clean_dir"; then
+        rm -rf "$clean_dir"
     fi
     popd
 
