@@ -16,7 +16,7 @@ In the next section, we will proceed to install everything required to run a com
 
 ## Quick start
 
-- [Install](/01.getting-started/02.install/#install)
-- [Check installation](/01.getting-started/02.install/#check-installation)
-- [Run a Lightstreams node](/01.getting-started/02.install/#run-a-lightstreams-node)
-- [Create an account](/01.getting-started/02.install/#create-an-account)
+- [Install](/getting-started/install/#install)
+- [Check installation](/getting-started/install/#check-installation)
+- [Run a Lightstreams node](/getting-started/install/#run-a-lightstreams-node)
+- [Create an account](/getting-started/install/#create-an-account)

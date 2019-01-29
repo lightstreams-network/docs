@@ -8,4 +8,4 @@ weight = 1
 
 Hi there! Welcome to the Lightstreams documentation! We're happy to have you here.
 
-- [Getting started](/01.getting-started/)
+- [Getting started](/getting-started/)

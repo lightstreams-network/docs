@@ -13,7 +13,7 @@ readonly GO_LIGHSTREAMS_REPO="git@github.com:lightstreams-network/go-lightstream
 readonly LIGHTCHAIN_REPO="git@github.com:lightstreams-network/lightchain.git"
 readonly GO_LIGHSTREAMS_TMP="/tmp/go-lightstreams"
 readonly LIGHTCHAIN_TMP="/tmp/lightchain"
-readonly CLI_DOCS_DIR="04.cli-docs"
+readonly CLI_DOCS_DIR="cli-docs"
 
 cmdline() {
     create_docs_leth
