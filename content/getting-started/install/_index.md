@@ -68,14 +68,14 @@ GOROOT=/usr/lib/go-1.10
 
 ## Run a Lightstreams node
 
-Initialize the node; you need to specify a --nodeid and a --network to connect to (rinkeby)
+Initialize the node; you need to specify a --nodeid and a --network to connect to (sirius)
 ```
-leth init --nodeid=1 --network=rinkeby
+leth init --nodeid=1 --network=sirius
 ```
 
-Run the node; you need to specify a --nodeid and a --network to connect to (rinkeby)
+Run the node; you need to specify a --nodeid and a --network to connect to (sirius)
 ```
-leth run --nodeid=1 --network=rinkeby
+leth run --nodeid=1 --network=sirius
 ```
 
 ## Create an account
