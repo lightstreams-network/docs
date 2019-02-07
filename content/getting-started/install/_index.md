@@ -83,3 +83,8 @@ leth run --nodeid=1 --network=sirius
 ```
 leth user signup --nodeid=1 --network=sirius
 ```
+
+
+## Request test tokens
+
+To get free test tokens, please signup on our community forum and [follow the instructions provided on this thread](https://discuss.lightstreams.network/t/request-test-tokens/64)
