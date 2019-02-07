@@ -103,7 +103,7 @@ To see the current state of the lightstreams test network (Sirius) and check the
 
 If you prefer to run your leth over the `Rinkeby` network, just repeat the commands a using `--network=rinkeby`.
 
-### Expose Leth HTTP API
+### Expose the Lighstreams HTTP API
 You need to run your `leth` server again, but this time using the `--https` flag as follow:
 ```bash
 leth run --nodeid=1 --network=sirius --https

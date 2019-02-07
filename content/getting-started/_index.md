@@ -13,7 +13,7 @@ A Lightstreams node consists of the following pieces:
 - `leth` is a command line interface used to run, interact, and control the Lightstreams node
 - `ipfs` is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology
 - `geth` is the the command line interface for running a full ethereum node implemented in Go
-- `lightchain` is an [open sourced](https://github.com/lightstreams-network/lightchain) ethereum-compatible blockchain which uses byzantine consensus
+- `lightchain` is an [open source ethereum-compatible blockchain](https://github.com/lightstreams-network/lightchain) which uses byzantine consensus
 
 ## Getting started
 
