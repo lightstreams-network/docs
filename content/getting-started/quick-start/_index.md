@@ -1,13 +1,12 @@
 +++
-title = "Getting Started"
+title = "Quick start"
 toc = true
 weight = 2
 +++
 
-The following assumes you have `leth` installed. Please follow [these instructions](/quick-start/install/#install)
-to install.
+The following assumes you have `leth` installed. Please follow [these instructions](/getting-started/install/#install) to install.
 
-## Interacting with Leth node over CLI
+## Getting help
 
 Run `leth help` command to display all commands you have in disposition in the current version.
 
@@ -60,7 +59,7 @@ Flags:
 
 Go to the [command line documentation](/cli-docs) to learn more about leth CLI.
 
-## Running Leth node
+## Running Lightstreams node
 
 First, initialize new Leth node with ID 1 for Sirius network:
 
@@ -76,7 +75,7 @@ leth init --nodeid=1 --network=sirius
 {"msg":"Leth node fully initialized!!!","nodeDir":"$HOME/.lightstreams_1"}
 ```
 
-Second, run Leth node:
+Second, run a lightstreams node:
 
 ```bash
 leth run --nodeid=1 --network=sirius
@@ -98,13 +97,11 @@ After you run the command above, the network synchronization will take several m
 So grab a coffee and [request some test](#get-free-testing-tokens) tokens while you wait :)
 
 
-To see the current state of the sirius network and check the status of your transactions, you can go to the lightstreams
-[block explorer](http://explorer.sirius.lightstreams.io)
-
+To see the current state of the lightstreams test network (Sirius) and check the status of your transactions, you can go to the [lightstreams block explorer](http://explorer.sirius.lightstreams.io)
 
 #### Using Rinkeby network
 
-If you prefer to run your leth over `Rinkeby` network repeat above commands using `--network=rinkeby`.
+If you prefer to run your leth over the `Rinkeby` network, just repeat the commands a using `--network=rinkeby`.
 
 ### Expose Leth HTTP API
 You need to run your `leth` server again, but this time using the `--https` flag as follow:
@@ -167,7 +164,7 @@ To get free test tokens, please signup on our community forum and [follow the in
 
 ### Obtaining ETH for Rinkeby
 
-Connect to the Leth node via IPC:
+Connect to the Lightstreams node via IPC:
 
 ```bash
 geth --datadir=$HOME/.lightstreams_1/rinkeby attach ipc:$HOME/.lightstreams_1/rinkeby/geth.ipc
@@ -201,7 +198,7 @@ Request FREE ETH from Rinkeby Faucet:
 - Open [https://www.rinkeby.io/#faucet](https://www.rinkeby.io/#faucet) and paste the post url
 - Wait few seconds, if the blockchain is fully synced, check the balance once again `eth.getBalance(eth.coinbase)` -> 3000000000000000000
 
-## SDK Help
+## Help
 
 If in doubt, you can always run any command with a `--help` flag to show and explain to you all the possible flags and cmd usages.
 

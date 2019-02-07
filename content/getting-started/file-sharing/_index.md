@@ -6,15 +6,15 @@ weight = 3
 
 ## Private File Sharing for dApps, content producers
 
-Once your Leth node is fully synced and you own some ETH, you can access our most important feature!
+Once your Lightstreams node is fully synced and you own some ETH, you can access our most important feature!
 
-**Private file sharing**.
+### Private file sharing
 
 Files are protected with ACL and access is authenticated and authorized before any content seeding starts! Not just encrypted publicly in IPFS, what majority of projects do. Privacy vs Confidentiality in action.
 
 ### Leth storage file
 
-Each file uploaded using Leth SDK generates 2 IPFS files.
+Each file uploaded using Leth generates 2 IPFS files.
 
 1. A public Meta JSON file, accessible by everyone describing the protected file
 
@@ -51,7 +51,7 @@ Enter keystore's password to unlock account:
 
 Note:
 
-- `--nodeid=1; --network=sirius` we are executing the command from Leth node 1 and deploying the ACL to file on sirius network
+- `--nodeid=1; --network=sirius` we are executing the command from Lightstreams node 1 and deploying the ACL to file on sirius network
 - `--file=` flag is an absolute path to the file you want to share
 - `--owner=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
 - `"meta":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
@@ -65,7 +65,7 @@ leth acl grant --help
 
 ### Reading the private file
 
-Now you can tell your friend running different Leth node to download your private file! If you would like to test it yourself, setup another Leth node on the same machine in another terminal, Leth node 2 and create also another account!
+Now you can tell your friend who is running a different Lightstreams node to download your private file! If you would like to test it yourself, setup another Lightstreams node on the same machine in another terminal, Lightstreams node 2 and create also another account!
 
 ```bash
 leth init --nodeid=2 --network=sirius
@@ -74,7 +74,7 @@ leth run --nodeid=2 --network=sirius
 ...wait a few hours for a full sync...
 ```
 
-Once your Leth node is full synced, attempt to read the private file from your new Leth node 2:
+Once your Lightstreams node is full synced, attempt to read the private file from your new Lightstreams node 2:
 
 ```bash
 leth storage fetch --nodeid=2 --network=sirius --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
@@ -86,7 +86,7 @@ Output:
 {"error": {"code": "err_cli", "message": "unable to download file to IPFS storage. Error: ipfs cat cmd timed out"}
 ```
 
-This error is expected because the file owner never actually granted permission to Leth node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.
+This error is expected because the file owner never actually granted permission to Lightstreams node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.
 
 Let's grant a read permission.
 

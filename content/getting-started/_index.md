@@ -1,5 +1,5 @@
 +++
-title = "Quick Start"
+title = "Getting started"
 toc = true
 weight = 1
 +++
@@ -17,8 +17,8 @@ A Lightstreams node consists of the following pieces:
 
 ## Getting started
 
-- [Install](/quick-start/install/#install)
-- [Check installation](/quick-start/install/#check-installation)
-- [Getting started](/quick-start/getting-started)
-- [Private file sharing](/quick-start/file-sharing)
+- [Install](/getting-started/install/#install)
+- [Check installation](/getting-started/install/#check-installation)
+- [Getting started](/getting-started/quick-start)
+- [Private file sharing](/getting-started/file-sharing)
 

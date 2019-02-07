@@ -75,6 +75,6 @@ GOROOT=/home/ggarrido/Software/go
 ```
 
 ## Next steps
-- [Getting started](/quick-start/getting-started)
-- [Create an account](/quick-start/getting-started/#create-an-account)
-- [Getting free tokens](/quick-start/getting-started/#get-free-testing-tokens)
+- [Quick start](/getting-started/quick-start/)
+- [Create an account](/getting-started/quick-start/#create-an-account)
+- [Getting free tokens](/getting-started/quick-start/#get-free-testing-tokens)
