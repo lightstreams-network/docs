@@ -4,12 +4,9 @@ toc = true
 weight = 1
 +++
 
-Lightstreams team implemented a permissioned blockchain protocol to
-empower users to share their files in secure and distributed manner, always
- in control the access to those private files.
+Lightstreams team implemented a permissioned blockchain protocol to empower users to share their files in secure and distributed manner, always in control the access to those private files.
 
-Jump into the next links and learn how to distribute your data today
-in a safe and secure manner.
+Have a look at the following links to learn how to distribute your data in a in a secure manner.
 
 ## First steps
 
