@@ -4,74 +4,126 @@ toc = true
 weight = 1
 +++
 
-## Install
 
-We have compiled binaries for macOS and Linux available (Windows not yet available).
+| Version | Release Date |
+|---------|--------------|
+|0.9.0-alpha Sirius|09.03.2019|
 
-### Install from prebuilt package
 
-#### macOS
+## Installation
 
+A Lightstreams node consists of the following pieces:
+
+- [`leth`](#leth) is a command line interface used to run, interact, and control the Lightstreams node
+- [`ipfs`](#ipfs) is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology
+- [`lightchain`](#lightchain) is a command line interface to connect to lightstreams ethereum compatible blockchain
+- [`geth`](#geth) is the the command line interface for running a full ethereum node implemented in Go
+
+
+### Leth
+
+Leth connects to permissioned blockchain protocol (Ethereum Smart Vault) to empower
+content creators to monetise their intellectual property data. It can be used a CLI or HTTP server.
+
+#### How to install
+
+***Pre-compiled binaries***
+
+== macOS ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/leth-osx" -O /usr/local/bin/leth
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-osx" -O /usr/local/bin/ipfs
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
-wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.22-7fa3509e.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+chmod u+x /usr/local/bin/leth
 ```
-
-#### Linux
-
+== Linux (amd64) ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/leth-linux-amd64" -O /usr/local/bin/leth
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-linux-amd64" -O /usr/local/bin/ipfs
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
-wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
-```
-
-If you have any issues installing Geth, please follow the [official instructions](https://geth.ethereum.org/downloads/)
-
-#### Windows
-
-Not yet available.
-
-### Set permissions
-
-```
 chmod u+x /usr/local/bin/leth
-chmod u+x /usr/local/bin/ipfs
-chmod u+x /usr/local/bin/geth
+```
+
+### Lightchain
+
+Lighstreams has released its own [ethereum-compatible blockchain](https://github.com/lightstreams-network/lightchain)
+which uses byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.
+
+Using `lightchain` you can connect to Lightreams blockchain and use every
+functionality currently existing on Ethereum. See more in the command line [documentation](cli-docs/lightchain/)
+
+#### How to install
+
+***Source code***
+
+Follow the instructions at [this repository](https://github.com/lightstreams-network/lightchain).
+
+***Pre-compiled binaries***
+
+== macOS ==
+```
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
+chmod u+x /usr/local/bin/lightchain
+```
+== Linux (amd64) ==
+```
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
 chmod u+x /usr/local/bin/lightchain
 ```
 
-### Install with Docker
+### IPFS (lightstreams version)
 
+IPFS is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files.
+
+Lightstreams has enhanced original implementation of IPFS to bring a to permissioned
+layer which allows users to control the access to after content is being distributed.
+
+#### How to install
+
+***Pre-compiled binaries***
+
+== macOS ==
 ```
-docker run -it -p 9091:9091 --name ls-node1 -d lightstreams/node
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-osx" -O /usr/local/bin/ipfs
+chmod u+x /usr/local/bin/ipfs
 ```
+== Linux (amd64) ==
+```
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-linux-amd64" -O /usr/local/bin/ipfs
+chmod u+x /usr/local/bin/ipfs
+```
+
+### Geth
+
+Follow the [official instructions](https://geth.ethereum.org/downloads/)
+
+***Pre-compiled binaries***
+
+== macOS ==
+```
+wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.22-7fa3509e.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+```
+== Linux (amd64) ==
+```
+wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+chmod u+x /usr/local/bin/geth
+```
+
 
 ## Check installation
 
 ```
 > leth version
-Version: 0.7.2-alpha Meta && PoA Test Ntw
+Version: 0.12.0-alpha Gas Price
 
 > ipfs version
-ipfs version 0.4.9-rc2
+ipfs version 0.4.16-dev
 
 > lightchain version
 Version: 0.9.1-alpha Sirius-Net
 
 > geth version
 Geth
-Version: 1.8.21-stable
-Git Commit: 9dc5d1a915ac0e0bd8429d6ac41df50eec91de5f
+Version: 1.8.23-stable
+Git Commit: c942700427557e3ff6de3aaf6b916e2f056c1ec2
 Architecture: amd64
 Protocol Versions: [63 62]
-Network Id: 1
-Go Version: go1.10.3
-Operating System: linux
-GOPATH=/home/ggarrido/goApps
-GOROOT=/home/ggarrido/Software/go
 ```
 
 ## Next steps
