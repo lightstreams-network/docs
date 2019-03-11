@@ -4,80 +4,76 @@ toc = true
 weight = 3
 +++
 
+Once your Lightstreams node is fully synced and you own some PHT(or ETH),
+you can start distributing files! If you still don't have a lightstream node
+running locally and fully synchronize, follow [this instructions](getting-started/quick-start/)
+
 ## Private File Sharing for dApps, content producers
 
-Once your Lightstreams node is fully synced and you own some ETH, you can access our most important feature!
+Files are protected using Access Control List(ACL) and every access is authenticated and authorized
+before any content seeding starts! Not just encrypted publicly in IPFS,
+what majority of projects do. Privacy vs Confidentiality in action.
 
-### Private file sharing
+### Storage files
 
-Files are protected with ACL and access is authenticated and authorized before any content seeding starts! Not just encrypted publicly in IPFS, what majority of projects do. Privacy vs Confidentiality in action.
+Each file uploaded using Leth generates 2 IPFS files:
 
-### Leth storage file
-
-Each file uploaded using Leth generates 2 IPFS files.
-
-1. A public Meta JSON file, accessible by everyone describing the protected file
-
-```json
-{
-  "ext": "txt",
-  "owner": "0xa92e3705e6d70cb45782bf055e41813060e4ce07",
-  "hash": "QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf", // of the protected file
-  "acl": "0x5D780255679c55846c1fE1E738e7604425171B50" // smart contract access rules
-}
-```
-
-2. The protected file itself.
+1. The uploaded file itself. (`/tmp/secret_file.txt)
+1. A public metadata document(`meta`, in json format, describing the protected file
 
 ### Adding a private file
 
-Given a file: "secret_file.txt" with content "hello secret world".
+Given a file such as "/tmp/secret_file.txt", with content `Hello secret world`.
 
 To share a private file using `leth` execute the following command:
 
 ```bash
-leth storage add --nodeid=1 --network=sirius --file=$HOME/Documents/secret_file.txt --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07
+leth storage add --nodeid=1 --network=sirius --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 \
+ --file=/tmp/secret_file.txt
 ```
 
-Output:
+Where:
 
+- `--nodeid=1; --network=sirius` identifies the lightstreams node running at this time locally
+- `--file=` flag is an absolute path to the file you want to share
+- `--owner=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
+
+
+We insert the passphrase for the account `0xa92e3705e6d70cb45782bf055e41813060e4ce07`
 ```bash
-Enter keystore's password to unlock account:
+Enter keystore password to unlock account:
+```
 
+We will obtain a similar output as following:
+```bash
 ...some logs, we keep logging on DEBUG level in Alpha version for debugging early bugs
-
+File successfully uploaded to IPFS storage.	{"meta": "QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf"}
 {"meta":"QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf","acl":"0xc2DBC8CdAba2df432C821639B80302f0675D6f74"}
 ```
 
-Note:
+  Note:
 
-- `--nodeid=1; --network=sirius` we are executing the command from Lightstreams node 1 and deploying the ACL to file on sirius network
-- `--file=` flag is an absolute path to the file you want to share
-- `--owner=` flag is file owner address who will pay for the file ACL. The account address was generated when you signed-up
-- `"meta":"QmNkbFAo5jSKm7KLCdCr8c8ue2X53ShATD5yjyQq3ynoaf"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
-- `"acl"` this is the file's ACL. A smart contract addr controlling all the access rules. You can use it `leth acl grant` cmd to grant permissions to other accounts
-
-PS: You can always run any command with `--help` flag to get explanation of all required/optional flags
-
-```bash
-leth acl grant --help
-```
+- `"meta"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
+- `"acl"` this is the file's ACL. A smart contract addr controlling all the access rules. You can use it [`leth acl grant`](#granting-read-access-to-the-private-file) cmd to grant permissions to other accounts
 
 ### Reading the private file
 
-Now you can tell your friend who is running a different Lightstreams node to download your private file! If you would like to test it yourself, setup another Lightstreams node on the same machine in another terminal, Lightstreams node 2 and create also another account!
+Now you can tell your friend who is running another Lightstreams node on his computer to download your private file!
+
+For testing proposed you may setup another Lightstreams node locally, using a different `nodeid` and on the same network, as follow:
 
 ```bash
 leth init --nodeid=2 --network=sirius
 leth run --nodeid=2 --network=sirius
 
-...wait a few hours for a full sync...
+...wait a few minutes for a full sync...
 ```
 
 Once your Lightstreams node is full synced, attempt to read the private file from your new Lightstreams node 2:
 
 ```bash
-leth storage fetch --nodeid=2 --network=sirius --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth storage fetch --nodeid=2 --network=sirius --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89 \
+  --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf
 ```
 
 Output:
@@ -86,17 +82,24 @@ Output:
 {"error": {"code": "err_cli", "message": "unable to download file to IPFS storage. Error: ipfs cat cmd timed out"}
 ```
 
-This error is expected because the file owner never actually granted permission to Lightstreams node 2 account, 0xnode2ethAddr0cb45782bf055e41813060e4ce89.
+This error is expected because the file owner never actually granted permission to Lightstreams node 2 account, `0xnode2ethAddr0cb45782bf055e41813060e4ce89`.
 
 Let's grant a read permission.
 
 ### Granting read access to the private file
 
-Execute :
+Only the owner of the file can grant access to its files. In this case we go back to the original terminal
+where owner account was set and execute the following command:
 
 ```bash
-leth acl grant --nodeid=1 --network=sirius --permission=read --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
+leth acl grant --nodeid=1 --network=sirius --permission=read --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 \
+--acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --to=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
+Where:
+
+- `acl` corresponds to the smart contract address provided after we published the file
+- `to` is the account we are granting access to
+- `permission` is the permission to grant, it may be: ['read', 'write', 'admin']
 
 Output:
 
@@ -107,7 +110,7 @@ Output:
 {"is_granted":"true"}
 ```
 
-Let's try to read the `secret_file.txt` file now:
+Let's go back to the second account terminal, and try to read the `secret_file.txt` file now:
 
 ```bash
 leth storage fetch --nodeid=2 --network=sirius --meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf --account=0xnode2ethAddr0cb45782bf055e41813060e4ce89
@@ -119,14 +122,20 @@ and the extension of the uploaded file resolved from the JSON Meta file.
 Output:
 
 ```bash
-{"output":"/tmp/QmProtIpfsHashdGXrvCgmQHo8Yqo8eLQTvC1sEJh6suBi.txt"}
+{"output":"/tmp/secret_file.txt"}
 ```
 
-Congratulation, you just shared a private file over internet in a decentralised manner.
+Congratulation, you just shared a private file over Internet in a decentralised manner.
+
+PS: You can always run any command with `--help` flag to get explanation of all required/optional flags
+
+```bash
+leth acl grant --help
+```
 
 ### Granting admin access to the private file
 
-Going step further. You can also grant admin rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.
+Going step further. You can also grant ``admin` rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.
 
 Example, let's grant an `admin` right to the Leth Node 2 account. With such a privilege, Leth Node 2 account will be able to further grant access to other devices in the network/users.
 
@@ -144,8 +153,14 @@ leth storage meta --nodeid=1 --network=sirius --meta=QmZYSewpHNvdW1TTgska792QAT7
 
 Output:
 
-```
-{"filename":"secret_file.txt","ext":"txt","owner":"0xadC486F16F003897fb927e22438cb1b820f79879","hash":"QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9","acl":"0x3cb99420c7F16f00ef41B5ace9e0C815F3736879"}
+```json
+{
+ "filename":"secret_file.txt",
+ "ext":"txt",
+ "owner":"0xadC486F16F003897fb927e22438cb1b820f79879",
+ "hash":"QmRnXxBJg3NjXzuTi91iNYcMff4oz4NwjN7fgtBXp2UbG9",
+ "acl":"0x3cb99420c7F16f00ef41B5ace9e0C815F3736879"
+}
 ```
 
 Note:
@@ -155,3 +170,4 @@ Note:
 - `owner` who uploaded the file
 - `hash` the hash of the protected file stored in IPFS (not the public Meta file hash)
 - `acl` address of the contract handling file permissions
+

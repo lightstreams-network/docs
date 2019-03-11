@@ -57,7 +57,7 @@ Flags:
       --nodeid int       ID of the node in order to support multiple nodes on the same machine. 0 by default.
 ```
 
-Go to the [command line documentation](/cli-docs) to learn more about leth CLI.
+Go to the [command line documentation](/cli-docs/leth) to learn more about leth CLI.
 
 ## Running Lightstreams node
 
@@ -75,7 +75,7 @@ leth init --nodeid=1 --network=sirius
 {"msg":"Leth node fully initialized!!!","nodeDir":"$HOME/.lightstreams_1"}
 ```
 
-Second, run a lightstreams node:
+Secondly, run a lightstreams node:
 
 ```bash
 leth run --nodeid=1 --network=sirius
@@ -198,7 +198,12 @@ Request FREE ETH from Rinkeby Faucet:
 - Open [https://www.rinkeby.io/#faucet](https://www.rinkeby.io/#faucet) and paste the post url
 - Wait few seconds, if the blockchain is fully synced, check the balance once again `eth.getBalance(eth.coinbase)` -> 3000000000000000000
 
-## Help
+## Learn more
+
+To learn more about how you can start sharing files using `leth`, go to the next
+section, [File sharing](getting-started/file-sharing/)
+
+### Help
 
 If in doubt, you can always run any command with a `--help` flag to show and explain to you all the possible flags and cmd usages.
 
