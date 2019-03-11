@@ -6,7 +6,7 @@ weight = 3
 
 Once your Lightstreams node is fully synced and you own some PHT(or ETH),
 you can start distributing files! If you still don't have a lightstream node
-running locally and fully synchronize, follow [this instructions](getting-started/quick-start/)
+running locally and fully synchronize, follow [the instructions here](getting-started/quick-start/)
 
 ## Private File Sharing for dApps, content producers
 
