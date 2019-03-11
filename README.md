@@ -19,7 +19,7 @@ hugo version
 
 ### Clone this repository
 ```
-git clone git@github.com:lightstreams-network/docs.git
+git clone --recurse-submodules git@github.com:lightstreams-network/docs.git
 ```
 
 ### Edit files in `content`
