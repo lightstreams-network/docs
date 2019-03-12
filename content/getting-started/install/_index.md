@@ -94,11 +94,11 @@ Follow the [official instructions](https://geth.ethereum.org/downloads/)
 
 == macOS ==
 ```
-wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.22-7fa3509e.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/geth-osx" -O /usr/local/bin/geth
 ```
 == Linux (amd64) ==
 ```
-wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/geth-linux-amd64" -O /usr/local/bin/geth
 ```
 
 ## Permissions
@@ -117,13 +117,13 @@ chmod u+x /usr/local/bin/ipds
 
 ```
 > leth version
-Version: 0.12.0-alpha Gas Price
+Version: 0.9.0-alpha Sirius
 
 > ipfs version
 ipfs version 0.4.16-dev
 
 > lightchain version
-Version: 0.9.1-alpha Sirius-Net
+Version: 0.12.0-alpha Gas Price
 
 > geth version
 Geth
