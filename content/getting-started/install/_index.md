@@ -32,12 +32,11 @@ content creators to monetise their intellectual property data. It can be used a 
 == macOS ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/leth-osx" -O /usr/local/bin/leth
-chmod u+x /usr/local/bin/leth
 ```
+
 == Linux (amd64) ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/leth-linux-amd64" -O /usr/local/bin/leth
-chmod u+x /usr/local/bin/leth
 ```
 
 ### Lightchain
@@ -59,12 +58,10 @@ Follow the instructions at [this repository](https://github.com/lightstreams-net
 == macOS ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/lightchain
 ```
 == Linux (amd64) ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/lightchain
 ```
 
 ### IPFS (lightstreams version)
@@ -81,15 +78,15 @@ layer which allows users to control the access to after content is being distrib
 == macOS ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-osx" -O /usr/local/bin/ipfs
-chmod u+x /usr/local/bin/ipfs
 ```
 == Linux (amd64) ==
 ```
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/ipfs-linux-amd64" -O /usr/local/bin/ipfs
-chmod u+x /usr/local/bin/ipfs
 ```
 
 ### Geth
+
+***Source code***
 
 Follow the [official instructions](https://geth.ethereum.org/downloads/)
 
@@ -102,7 +99,17 @@ wget -qO- https://gethstore.blob.core.windows.net/builds/geth-darwin-amd64-1.8.2
 == Linux (amd64) ==
 ```
 wget -qO- https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.21-9dc5d1a9.tar.gz | tar xvz --strip-components=1 -C /usr/local/bin/ geth-linux-amd64-1.8.21-9dc5d1a9/geth
+```
+
+## Permissions
+
+In case you decide to install pre-compiled versions, it will be required
+another step in order to set the right executable permissions to those binaries, as follow:
+```
+chmod u+x /usr/local/bin/leth
 chmod u+x /usr/local/bin/geth
+chmod u+x /usr/local/bin/lightchain
+chmod u+x /usr/local/bin/ipds
 ```
 
 
