@@ -45,7 +45,7 @@ Lighstreams has released its own [ethereum-compatible blockchain](https://github
 which uses byzantine consensus to replace the original proof-of-work (PoW) from Ethereum.
 
 Using `lightchain` you can connect to Lightreams blockchain and use every
-functionality currently existing on Ethereum. See more in the command line [documentation](cli-docs/lightchain/)
+functionality currently existing on Ethereum. See more in the command line [documentation](/cli-docs/lightchain/)
 
 #### How to install
 
