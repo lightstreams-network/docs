@@ -109,7 +109,7 @@ another step in order to set the right executable permissions to those binaries,
 chmod u+x /usr/local/bin/leth
 chmod u+x /usr/local/bin/geth
 chmod u+x /usr/local/bin/lightchain
-chmod u+x /usr/local/bin/ipds
+chmod u+x /usr/local/bin/ipfs
 ```
 
 
