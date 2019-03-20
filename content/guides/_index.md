@@ -4,7 +4,7 @@ toc = true
 weight = 2
 +++
 
-This section includes specific guidelines for the integration of Lighstreams services.
+This section includes specific guides for the integration of Lightstreams services.
 
 ## Guides
 
