@@ -29,6 +29,11 @@ cd ..
 Once you have Hugo installed, you can start editing the files in the `content`
 folder.
 
+### Bring latest submodule changes
+```
+git pull --recurse-submodules
+```
+
 ### Run local server to check changes
 ```
 hugo server
@@ -42,7 +47,7 @@ hugo
 ### Deploy changes
 
 ```
-./deploy-gh-pages
+./bin/deploy-gh-pages
 ```
 
 ### Commit
