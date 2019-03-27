@@ -23,11 +23,11 @@ and macOS.
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
 ```
 
 After downloading the binary, you will need to set the right executable permissions to it, as follow:
