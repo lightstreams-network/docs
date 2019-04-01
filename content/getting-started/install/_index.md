@@ -7,7 +7,7 @@ weight = 1
 
 | Version | Release Date |
 |---------|--------------|
-|0.9.0-alpha Sirius|09.03.2019|
+|0.11.0-alpha Mainnet|28.03.2019|
 
 
 ## Installation
@@ -117,13 +117,13 @@ chmod u+x /usr/local/bin/ipfs
 
 ```
 > leth version
-Version: 0.9.0-alpha Sirius
+Version: 0.11.0-alpha Mainnet
 
 > ipfs version
 ipfs version 0.4.16-dev
 
 > lightchain version
-Version: 0.12.0-alpha Gas Price
+Version: 1.0.0-beta MainNet
 
 > geth version
 Geth
