@@ -10,4 +10,4 @@ Hi there! Welcome to the Lightstreams documentation! [Getting started](/getting-
 
 ![Lightstreams Technical Stack](/img/lightstreams-technical-stack.png)
 
-[Need help? Get in touch with us](https://discuss.lightstreams.network/c/dev)
+
