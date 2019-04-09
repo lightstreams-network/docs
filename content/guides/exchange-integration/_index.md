@@ -23,11 +23,11 @@ and macOS.
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx" -O /usr/local/bin/lightchain
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
 ```
 
 After downloading the binary, you will need to set the right executable permissions to it, as follow:
@@ -46,7 +46,7 @@ Once `lightchain` is installed we can proceed with the initialization and synchr
 of a new lightstreams node.
 
 Lightstreams implements two networks: `mainnet` and a testnet called `sirius`.
-At the minute `lightchain` is connecting by default to `sirius` as our team is still working on
+At the minute `lightchain` is connecting by default to `mainnet` as our team is still working on
 the launch of the mainnet.
 
 ### Node initialization
@@ -55,7 +55,7 @@ To initialise a new blockchain you need to run lightchain init and choose
 a local path where blockchain files are going to be stored.
 
 ```
-lightchain init --datadir="${HOME}/.lightstreams-sirius" --sirius
+lightchain init --datadir="${HOME}/.lightstreams-mainnet" --mainnet
 ```
 
 
@@ -63,13 +63,13 @@ lightchain init --datadir="${HOME}/.lightstreams-sirius" --sirius
 
 To run a lightchain node you only need to run the following command:
 ```
-lightchain run --datadir="${HOME}/.lightstreams-sirius"
+lightchain run --datadir="${HOME}/.lightstreams-mainnet"
 ```
 
 After the command is executed the Lightstreams node will proceed with the synchronization.
 Once the node is synchronized we should leave node running in order to interact with the blockchain.
 
-Lightstreams also provides a [block explorer](https://explorer.sirius.lightstreams.io) to see which is the current state of the blockchain.
+Lightstreams also provides a [block explorer](https://explorer.mainnet.lightstreams.io) to see which is the current state of the blockchain.
 
 #### Help
 
@@ -88,7 +88,7 @@ To enable those RPC endpoints, we need to specify the APIs we want to enable and
 include `--rpc --rpcapi eth,net,web3,personal,admin`. In case you want to enable the WebSocket endpoints you have to also use`--ws`
 
 ```
-lightchain run --datadir="${HOME}/.lightstreams-sirius" --rpc --rpcapi eth,net,web3,personal,admin --ws
+lightchain run --datadir="${HOME}/.lightstreams-mainnet" --rpc --rpcapi eth,net,web3,personal,admin --ws
 ```
 
 By default RPC API is exposed over port _`:8545`_ and WebSocket over port _`:8546`_.
@@ -96,7 +96,7 @@ In case you want to specify a different port, you may use the following flags
 `--rpcport ${RPC_PORT}` or `--wsport ${WS_PORT}` respectively.
 
 In addition to those, IPC Unix socket is always enabled and you can find it at
-`${HOME}/.lightstreams-sirius/database/geth.ipc` (according to the values used on above example)
+`${HOME}/.lightstreams-mainnet/database/geth.ipc` (according to the values used on above example)
 
 ### Example
 

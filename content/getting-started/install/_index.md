@@ -31,12 +31,12 @@ content creators to monetise their intellectual property data. It can be used a 
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/leth/leth-osx" -O /usr/local/bin/leth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-osx" -O /usr/local/bin/leth
 ```
 
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/leth/leth-linux-amd64" -O /usr/local/bin/leth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/leth/latest/leth-linux-amd64" -O /usr/local/bin/leth
 ```
 
 ### Lightchain
@@ -57,11 +57,11 @@ Follow the instructions at [this repository](https://github.com/lightstreams-net
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-osx" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-osx" -O /usr/local/bin/lightchain
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-linux-amd64" -O /usr/local/bin/lightchain
 ```
 
 ### IPFS (lightstreams version)
@@ -77,11 +77,11 @@ layer which allows users to control the access to after content is being distrib
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/ipfs/ipfs-osx" -O /usr/local/bin/ipfs
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-osx" -O /usr/local/bin/ipfs
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/ipfs/ipfs-linux-amd64" -O /usr/local/bin/ipfs
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64" -O /usr/local/bin/ipfs
 ```
 
 ### Geth
@@ -94,11 +94,11 @@ Follow the [official instructions](https://geth.ethereum.org/downloads/)
 
 == macOS ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/geth/geth-osx" -O /usr/local/bin/geth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-osx" -O /usr/local/bin/geth
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/latest/geth/geth-linux-amd64" -O /usr/local/bin/geth
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/geth/latest/geth-linux-amd64" -O /usr/local/bin/geth
 ```
 
 ## Permissions
