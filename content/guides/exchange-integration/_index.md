@@ -27,7 +27,7 @@ wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lates
 ```
 == Linux (amd64) ==
 ```
-wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain/lightchain-linux-amd64" -O /usr/local/bin/lightchain
+wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/latest/lightchain-linux-amd64" -O /usr/local/bin/lightchain
 ```
 
 After downloading the binary, you will need to set the right executable permissions to it, as follow:
