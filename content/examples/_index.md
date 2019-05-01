@@ -4,7 +4,12 @@ toc = true
 weight = 3
 +++
 
-Below we have proposed a list of decentralized applications (DApps) where [`leth`](/getting-started/quick-start/) could be a fundamental pillar for their implementation:
+Using [`leth`](/getting-started/quick-start/) we implemented the following example projects:
+
+- [e-commerce demo](/examples/e-commerce)
+- [JS SDK](/examples/js-sdk)
+
+Beside that, we could use **Leth** as fundamental pillar for many other decentralized applications (DApps), such as:
 
 - Light Drive, a decentralized file synchronization tool
 - Light Note, a decentralized note taking application
