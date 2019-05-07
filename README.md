@@ -59,7 +59,7 @@ git commit -m "Updated xyz"
 
 ## Update CLI docs
 
-Run the create-cli-docs command (for lightstreams developers only:
+Run the create-cli-docs command (for Lightstreams developers only):
 ```
 ./bin/create-cli-docs
 ```
