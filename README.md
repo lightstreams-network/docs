@@ -50,20 +50,6 @@ hugo
 ./bin/deploy-gh-pages
 ```
 
-### Deploy changes manually
-
-```
-hugo
-cd public
-git add .
-git commit -m "rebuilding site `date +"%Y-%m-%d %T"`"
-git push origin master
-cd ..
-git add .
-git commit -m "Updates content + public submodule ref"
-git push origin master
-```
-
 ### Commit
 
 ```
@@ -79,3 +65,18 @@ Run the create-cli-docs command (for Lightstreams developers only):
 ```
 Once this is done, follow the instructions above to publish the changes.
 
+## Updating content manually
+
+Change the necessary content in `content` folder.
+
+```
+hugo
+cd public
+git add .
+git commit -m "rebuilding site `date +"%Y-%m-%d %T"`"
+git push origin master
+cd ..
+git add .
+git commit -m "Updates content + public submodule ref"
+git push origin master
+```
