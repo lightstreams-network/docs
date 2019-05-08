@@ -39,7 +39,7 @@ Display current version:
 
 ```bash
 leth version
-Version: 0.6.0-alpha ACL Admin
+Version: 0.12.1-alpha Shop
 ```
 
 Display instructions for initializing new Lightstreams Node:
