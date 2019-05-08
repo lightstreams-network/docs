@@ -50,6 +50,20 @@ hugo
 ./bin/deploy-gh-pages
 ```
 
+### Deploy changes manually
+
+```
+hugo
+cd public
+git add .
+git commit -m "rebuilding site `date +"%Y-%m-%d %T"`"
+git push origin master
+cd ..
+git add .
+git commit -m "Updates content + public submodule ref"
+git push origin master
+```
+
 ### Commit
 
 ```

@@ -7,7 +7,7 @@ weight = 1
 
 | Version | Release Date |
 |---------|--------------|
-|0.11.0-alpha Mainnet|28.03.2019|
+|0.12.1-alpha Shop|08.05.2019|
 
 
 ## Installation
@@ -117,7 +117,7 @@ chmod u+x /usr/local/bin/ipfs
 
 ```
 > leth version
-Version: 0.11.0-alpha Mainnet
+Version: 0.12.1-alpha Shop
 
 > ipfs version
 ipfs version 0.4.16-dev

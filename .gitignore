@@ -2,3 +2,4 @@
 !/public/.gitkeep
 /auto_generated/*
 .idea
+.DS_Store
