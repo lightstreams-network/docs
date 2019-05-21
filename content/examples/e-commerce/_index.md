@@ -1,7 +1,7 @@
 +++
-title = "DApp e-commerce demo"
+title = "Example DApp e-commerce demo"
 toc = true
-weight = 1
+weight = 2
 +++
 
 ## What is Lightstreams e-commerce demo dapp?
@@ -15,8 +15,8 @@ could offer their intellectual content for selling in a decentralize manner usin
 Lightstreams provides two separate and independent nodes of this e-commerce demo to represent the real decentralization
 of this DApp.
 
-- [Demo Node 1](demo.node1.lightstreams.io)
-- [Demo Node 2](demo.node2.lightstreams.io)
+- [Demo Node 1](https://demo.node1.lightstreams.io)
+- [Demo Node 2](https://demo.node2.lightstreams.io)
 
 ## Application
 
