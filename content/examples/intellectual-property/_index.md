@@ -1,18 +1,16 @@
 +++
-title = "Example DApp e-commerce demo"
+title = "Example DApp document authorizer demo"
 toc = true
 weight = 2
 +++
 
-## What is Lightstreams e-commerce demo dapp?
+## What is the Intellectual Property demo dapp?
 
-Lightstreams e-commerce demo intends to show case a real world e-commerce application where content creators
-could offer their intellectual content for selling in a decentralize manner using Lightstreams Smart Vault
- to guarantee the security and traceability of their published content.
+Lightstreams document authorizer demo intends to show case a real world document authorizer application where content creators could offer their intellectual property for selling in a decentralized manner using Lightstreams Smart Vault to guarantee the security and traceability of their published content.
 
 ## Nodes
 
-Lightstreams provides two separate and independent nodes of this e-commerce demo to represent the real decentralization
+Lightstreams provides two separate and independent nodes of this document authorizer demo to represent the real decentralization
 of this DApp.
 
 - [Demo Node 1](https://demo.node1.lightstreams.io)
