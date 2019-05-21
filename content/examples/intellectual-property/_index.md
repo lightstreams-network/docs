@@ -1,5 +1,5 @@
 +++
-title = "Example DApp document authorizer demo"
+title = "Example DApp Document Authorizer Demo"
 toc = true
 weight = 2
 +++
