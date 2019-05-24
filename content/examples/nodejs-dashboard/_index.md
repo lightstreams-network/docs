@@ -23,7 +23,7 @@ other users.
 
 ### Create an account
 
-![Signup](/img/nodejs/imgs/signup.png?raw=true)
+![Signup](/img/nodejs/signup.png?raw=true)
 
 ### Login
 
