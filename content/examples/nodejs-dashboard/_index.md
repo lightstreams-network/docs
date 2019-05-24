@@ -39,25 +39,33 @@ other users.
 
 ### My files
 
-![My Files](/img/nodejs/my_files.png?raw=true)
 You can see the list of files you uploaded and which users have access to them. By clicking
 on one of the little icon you can revoke the access to the users at anytime.
+
+![My Files](/img/nodejs/my_files.png?raw=true)
 
 Also you can download the content of the files you uploaded.
 
 ### Grant access to file
-![Grant access to file](/img/nodejs/grant_access.png?raw=true)
+
 Grant access to other users to your content without waiting for a access request.
 
+![Grant access to file](/img/nodejs/grant_access.png?raw=true)
+
+
 ### Request access to other user file
-![Pending request](/img/nodejs/pending_requests.png?raw=true)
+
 Insert the username of other user and load the list of available items of this user.
 By clicking on the locker icon you will send a access request to the file owner. In case
 you already got access to the file it will display the download action.
 
-### Request access to other user file
-![Request file access](/img/nodejs/request_file_access.png?raw=true)
+![Pending request](/img/nodejs/pending_requests.png?raw=true)
+
+### Manage pending access requests
+
 On this section it will listed the pending access requests from other users to your files.
+
+![Request file access](/img/nodejs/request_file_access.png?raw=true)
 
 
 ## Freemium Model
