@@ -33,11 +33,11 @@ other users.
 
 ![Signup](/img/nodejs/wallet.png?raw=true)
 
-#### Upload file
+### Upload file
 
 ![Upload file](/img/nodejs/upload_file.png?raw=true)
 
-#### My files
+### My files
 
 ![My Files](/img/nodejs/my_files.png?raw=true)
 You can see the list of files you uploaded and which users have access to them. By clicking
