@@ -1,8 +1,7 @@
 +++
-title = "leth acl grant-public"
+title = "leth acl grant"-public
 toc = true
 +++
-
 ## leth acl grant-public
 
 Grant a read access to everybody.
