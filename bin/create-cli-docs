@@ -4,8 +4,17 @@ set -e
 set -u
 set -o pipefail
 
+argv0=$(echo "$0" | sed -e 's,\\,/,g')
+
+case "$(uname -s)" in
+  Darwin) BASEDIR="$( cd "$( dirname "$argv0" )" && pwd )";;
+  Linux) BASEDIR=$(dirname "$(readlink -f "$0" || echo "$argv0")");;
+  *CYGWIN*) BASEDIR=`cygpath -w "$BASEDIR"`;;
+  *MSYS*) BASEDIR=`cygpath -w "$BASEDIR"`;;
+esac
+
 readonly SCRIPTNAME=$(basename $0)
-readonly SCRIPTDIR=$(readlink -m $(dirname $0))
+readonly SCRIPTDIR=$BASEDIR
 readonly PROJECTDIR=$SCRIPTDIR/..
 readonly ARGS="$@"
 readonly CMD="generate-dir-tree"
