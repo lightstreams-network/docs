@@ -36,7 +36,7 @@ folder.
 hugo server
 ```
 
-## Update CLI docs (optional)
+### Create & update CLI docs (optional)
 
 Run the create-cli-docs command (for Lightstreams developers only):
 ```
@@ -47,6 +47,13 @@ Run the create-cli-docs command (for Lightstreams developers only):
 
 ```
 ./bin/deploy-gh-pages
+```
+
+### Commit
+
+```
+git add .
+git commit -m "Updated xyz"
 ```
 
 ## Updating content manually
