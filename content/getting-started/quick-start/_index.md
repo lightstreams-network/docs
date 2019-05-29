@@ -39,7 +39,7 @@ Display current version:
 
 ```bash
 leth version
-Version: 0.12.1-alpha Shop
+Version: 0.15.0-alpha CORS API
 ```
 
 Display instructions for initializing new Lightstreams Node:
