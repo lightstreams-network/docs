@@ -25,51 +25,38 @@ git checkout master
 cd ..
 ```
 
+## Update docs
+
 ### Edit files in `content`
 Once you have Hugo installed, you can start editing the files in the `content`
 folder.
-
-### Bring latest submodule changes
-```
-git pull --recurse-submodules
-```
 
 ### Run local server to check changes
 ```
 hugo server
 ```
 
-### Publish changes
-```
-hugo
-```
-
-### Deploy changes
-
-```
-./bin/deploy-gh-pages
-```
-
-### Commit
-
-```
-git add .
-git commit -m "Updated xyz"
-```
-
-## Update CLI docs
+## Update CLI docs (optional)
 
 Run the create-cli-docs command (for Lightstreams developers only):
 ```
 ./bin/create-cli-docs
 ```
-Once this is done, follow the instructions above to publish the changes.
+
+### Publish & deploy changes
+
+```
+./bin/deploy-gh-pages
+```
 
 ## Updating content manually
 
-Change the necessary content in `content` folder.
+Change the necessary content in `content` folder, then:
 
 ```
+cd public
+git reset --hard origin/master
+cd .. # docs project folder
 hugo
 cd public
 git add .
