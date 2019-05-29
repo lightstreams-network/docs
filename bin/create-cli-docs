@@ -14,14 +14,14 @@ case "$(uname -s)" in
 esac
 
 readonly SCRIPTNAME=$(basename $0)
-readonly SCRIPTDIR=$BASEDIR
-readonly PROJECTDIR=$SCRIPTDIR/..
+readonly SCRIPTDIR="$BASEDIR"
+readonly PROJECTDIR="$SCRIPTDIR/.."
 readonly ARGS="$@"
 readonly CMD="generate-dir-tree"
 readonly GO_LIGHSTREAMS_REPO="git@github.com:lightstreams-network/go-lightstreams.git"
 readonly LIGHTCHAIN_REPO="git@github.com:lightstreams-network/lightchain.git"
-readonly GO_LIGHSTREAMS_TMP="/tmp/go-lightstreams"
-readonly LIGHTCHAIN_TMP="/tmp/lightchain"
+readonly GO_LIGHSTREAMS_TMP="$(dirname $(mktemp -u))/go-lightstreams"
+readonly LIGHTCHAIN_TMP="$(dirname $(mktemp -u))/lightchain"
 readonly CLI_DOCS_DIR="cli-docs"
 
 cmdline() {
