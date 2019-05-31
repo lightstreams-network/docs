@@ -1,5 +1,5 @@
 +++
-title = "leth acl revoke"-public
+title = "leth acl revoke-public"
 toc = true
 +++
 ## leth acl revoke-public
