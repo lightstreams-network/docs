@@ -17,13 +17,15 @@ lightchain init [flags]
 ### Options
 
 ```
-      --datadir string    Data directory for the databases and keystore (default "/Users/enchanterio/.lightchain")
-  -h, --help              help for init
-      --lvl string        Level of logging (default "info")
-      --sirius            Initialize a node connected to Sirius network
-      --standalone        Data directory for the databases and keystore
-      --trace             Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
-      --tracelog string   The filepath to a log file where all tracing output will be persisted (default "/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/tracer.log")
+      --datadir string   Data directory for the databases and keystore (default "/home/ggarrido/.lightchain")
+      --force            Forces the init by removing the data dir if already exists
+  -h, --help             help for init
+      --lvl string       Level of logging (default "info")
+      --mainnet          Initialize a node connected to production, MainNet
+      --sirius           Initialize a node connected to Sirius network
+      --standalone       Data directory for the databases and keystore
+      --trace            Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
+
 ```
 
 ### SEE ALSO

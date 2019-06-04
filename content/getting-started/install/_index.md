@@ -17,7 +17,7 @@ A Lightstreams node consists of the following pieces:
 - [`leth`](#leth) is a command line interface used to run, interact, and control the Lightstreams node
 - [`ipfs`](#ipfs) is a decentralised file system enhanced with our award winning “Permissioned Blocks” technology
 - [`lightchain`](#lightchain) is a command line interface to connect to lightstreams ethereum compatible blockchain
-- [`geth`](#geth) is the the command line interface for running a full ethereum node implemented in Go
+- [`geth`](#geth)(Optional) is the the command line interface for running a full ethereum node implemented in Go
 
 
 ### Leth
@@ -84,7 +84,9 @@ wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs
 wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/ipfs/latest/ipfs-linux-amd64" -O /usr/local/bin/ipfs
 ```
 
-### Geth
+### Geth (Optional)
+
+Only in case of using `Rinkeby` network.
 
 ***Source code***
 
@@ -117,13 +119,13 @@ chmod u+x /usr/local/bin/ipfs
 
 ```
 > leth version
-Version: 0.15.0-alpha
+Version: 0.15.0-alpha API CORS
 
 > ipfs version
 ipfs version 0.4.16-dev
 
 > lightchain version
-Version: 1.0.0-beta MainNet
+Version: 1.2.0 Rock && Roll
 
 > geth version
 Geth

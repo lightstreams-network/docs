@@ -17,22 +17,23 @@ lightchain run [flags]
 ### Options
 
 ```
-      --abci/protocol string   socket | grpc (default "socket")
-      --datadir string         Data directory for the databases and keystore (default "/Users/enchanterio/.lightchain")
+      --datadir string         Data directory for the databases and keystore (default "/home/ggarrido/.lightchain")
   -h, --help                   help for run
       --lvl string             Level of logging (default "info")
       --prometheus             Enable prometheus metrics exporter
       --rpc                    Enable the HTTP-RPC server
       --rpcaddr string         HTTP-RPC server listening interface (default "localhost")
       --rpcapi string          API's offered over the HTTP-RPC interface
+      --rpccorsdomain string   Comma separated list of domains from which to accept cross origin requests (browser enforced)
       --rpcport int            HTTP-RPC server listening port (default 8545)
-      --tmt/p2p/port uint      Tendermint port used to achieve exchange messages across nodes (default 26656)
-      --tmt/proxy/port uint    Lightchain RPC port used to receive incoming messages from Tendermint (default 26658)
-      --tmt/rpc/port uint      Tendermint RPC port used to receive incoming messages from Lightchain (default 26657)
+      --rpcvhosts string       Comma separated list of virtual hostnames from which to accept requests (server enforced). Accepts '*' wildcard. (default "localhost")
+      --tmt_p2p_port uint      Tendermint port used to achieve exchange messages across nodes (default 26656)
+      --tmt_rpc_port uint      Tendermint RPC port used to receive incoming messages from Lightchain (default 26657)
       --trace                  Whenever to be asserting and reporting blockchain state in real-time (testing, debugging purposes)
-      --tracelog string        The filepath to a log file where all tracing output will be persisted (default "/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/tracer.log")
       --ws                     Enable the WS-RPC server
       --wsaddr string          WS-RPC server listening interface (default "localhost")
+      --wsapi string           API's offered over the WS-RPC interface
+      --wsorigins string       Origins from which to accept websockets requests (default "Origins from which to accept websockets requests")
       --wsport int             WS-RPC server listening port (default 8546)
 ```
 
