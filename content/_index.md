@@ -4,10 +4,55 @@ toc = true
 weight = 1
 +++
 
-##  Welcome
+#  The future is private
 
-Hi there! Welcome to the Lightstreams documentation! [Getting started](/getting-started/)
+Hi there! Welcome to the Lightstreams documentation!
+
+In **Lightstreams** we believe the future is private we want to help you
+to make it truth. Lightstreams empower developers 
+and tech companies to create an future of distributes applications(dApps) where
+the users are in control of their private data.
+
+## Why Lightstreams?
+- Lightstreams has its own blockchain, a **PoA Ethereum compatible** blockchain.
+- Lightstreams blockchain is **fast**, up to 200 transactions per second.
+- Lightstreams is **GDPR compliant**, users control their data.
+- Lightstreams is **distributed**, we have an unique governance model.
+- Lightstreams is revolutionary, we create a **freemium model** for your Dapps.
+
+## Our network
+
+Lightstreams has implemented [`Lightchain`](https://github.com/lightstreams-network/lightchain) a 
+Proof of Authority(PoA) Ethereum blockchain which is 100% compatible with the latest ethereum features. 
+Lightstreams blockchain uses **Tendermint Byzantine fault tolerance(BFT)** protocol to achieve consensus on the
+produced blocks.
+
+Currently there are two available networks, a test network named **Sirius** and a main network. Both of them can be 
+monitored using the corresponding block explorers [*explorer.sirius.lightstreams.io*](https://explorer.sirius.lightstreams.io)
+and [*explorer.lightstreams.io*](https://explorer.lightstreams.io). Don't waste one more second and request some 
+**FREE TOKENS** for our network `Sirius` now and go to code, just text us on our 
+[*forum*](https://discuss.lightstreams.network/t/request-test-tokens/64/10) or in our [*telegram*](https://t.me/LightstreamsDevelopers).
+
+## The Smart Vault
+
+Our development team got to create an unique software by the seamless integration of three popular elements: Tendermint,
+Ethereum and a IPFS protocol enhanced by our team with a *permissioned layer* to ensure 
+user's content is ONLY distributed to authorized peers.
+
+![SmartVaultLogo](/img/SmartVaultLogo.png)
+
+Using **Leth**, Lightstreams SDK for dApp developers, you can interact with the Smart Vault 
+and share content in a distribute and secure manner in only few commands using its [*CLI*](/cli-docs/leth/) 
+or in few lines of code using its [*HTTP API*](https://docs.lightstreams.network/api-docs/). 
+ Read more about how to install it or use it in [Getting started](/getting-started/).
+
+
+## How works ?
 
 ![Lightstreams Technical Stack](/img/lightstreams-technical-stack.png)
+
+
+
+
 
 
