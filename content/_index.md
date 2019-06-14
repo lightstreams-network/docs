@@ -4,21 +4,20 @@ toc = true
 weight = 1
 +++
 
-#  The future is private
+#  Welcome!
 
 Hi there! Welcome to the Lightstreams documentation!
 
-In **Lightstreams** we believe the future is private we want to help you
-to make it truth. Lightstreams empower developers 
-and tech companies to create an future of distributes applications(dApps) where
-the users are in control of their private data.
+In **Lightstreams** we truly believe the future is private and that no one company should own it. We want to help you
+make it happen. Lightstreams empower developers and companies to create a future of decentralized applications (dApps) where
+users are in control of their personal data.
 
 ## Why Lightstreams?
 - Lightstreams has its own blockchain, a **PoA Ethereum compatible** blockchain.
 - Lightstreams blockchain is **fast**, up to 200 transactions per second.
 - Lightstreams is **GDPR compliant**, users control their data.
-- Lightstreams is **distributed**, we have an unique governance model.
-- Lightstreams is revolutionary, we create a **freemium model** for your Dapps.
+- Lightstreams is **politically decentralized**, we have a radical governance model.
+- Lightstreams is for mainstream users, we enable **freemium models** for your Dapps.
 
 ## Our network
 
