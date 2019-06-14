@@ -201,7 +201,7 @@ Request FREE ETH from Rinkeby Faucet:
 ## Learn more
 
 To learn more about how you can start sharing files using `leth`, go to the next
-section, [File sharing](/getting-started/file-sharing/)
+section, [File sharing](/guides/file-sharing/)
 
 ### Help
 

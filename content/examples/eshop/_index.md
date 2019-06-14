@@ -41,7 +41,7 @@ For simplicity of the demo, the metadata such as smart contract addresses of all
 
 For creating an eShop, you will need some PHT tokens. Request them at our [forum](https://discuss.lightstreams.network).
 
-Creating a shop using the UI will create and deploy a new smart contract keeping track of the digital content you will be selling. This is possible thanks to the Leth SDK `shop` module booted on Lightstreams Node launch and exposed over CLI and HTTPS. For full documentation about the internals, visit our [getting started with e-commerce guide](https://docs.lightstreams.network/getting-started/peer-to-peer-ecommerce/).
+Creating a shop using the UI will create and deploy a new smart contract keeping track of the digital content you will be selling. This is possible thanks to the Leth SDK `shop` module booted on Lightstreams Node launch and exposed over CLI and HTTPS. For full documentation about the internals, visit our [getting started with e-commerce guide](https://docs.lightstreams.network/guides/peer-to-peer-ecommerce/).
 
 ### 4) Sell/Buy Content
 
@@ -55,4 +55,4 @@ E.g, you can purchase a picture of a fountain I took in Mallorca for 15 Sirius t
 
 Thanks to Lightstreams SDK, Leth, creating DApps and monetizing commercial content was never easier!
 
-[Getting started with e-commerce guide.](https://docs.lightstreams.network/getting-started/peer-to-peer-ecommerce/)
+[Getting started with e-commerce guide.](https://docs.lightstreams.network/guides/peer-to-peer-ecommerce/)
