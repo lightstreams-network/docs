@@ -8,8 +8,8 @@ weight = 1
 
 Hi there! Welcome to the Lightstreams documentation!
 
-In **Lightstreams** we truly believe the future is private and that no one company should own it. We want to help you
-make it happen. Lightstreams empower developers and companies to create a future of decentralized applications (dApps) where
+At **Lightstreams**, we believe the future is private and that no one company should own it #ownyourdata. We want to help you
+make it happen. Lightstreams empowers developers and companies to create a future with decentralized applications (dApps), where
 users are in control of their personal data.
 
 ## Why Lightstreams?
