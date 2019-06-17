@@ -1,10 +1,10 @@
 +++
 title = "Ecommerce"
 toc = true
-weight = 4
+weight = 2
 +++
 
-If you followed the [Private File Sharing](/getting-started/file-sharing/) tutorial you learned how to obtain free PHTs and how to distribute files in peer-to-peer manner.
+If you followed the [Private File Sharing](/guides/file-sharing/) tutorial you learned how to obtain free PHTs and how to distribute files in peer-to-peer manner.
 
 In this tutorial you will learn how to sell your digital content and how other users can buy it without any intermediary!
 

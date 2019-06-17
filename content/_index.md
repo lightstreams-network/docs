@@ -46,7 +46,7 @@ or in few lines of code using its [*HTTP API*](https://docs.lightstreams.network
  Read more about how to install it or use it in [Getting started](/getting-started/).
 
 
-## How works ?
+## How it works ?
 
 ![Lightstreams Technical Stack](/img/lightstreams-technical-stack.png)
 

@@ -12,5 +12,4 @@ weight = 1
 
 - [Installation](/getting-started/install/#install)
 - [Quick start](/getting-started/quick-start)
-- [Private file sharing](/getting-started/file-sharing)
 
