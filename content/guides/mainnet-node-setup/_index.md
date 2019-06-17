@@ -1,7 +1,7 @@
 +++
 title = "Mainnet Lightchain Node"
 toc = true
-weight = 1
+weight = 3
 +++
 
 In this section, we will explain the steps to install and synchronize
