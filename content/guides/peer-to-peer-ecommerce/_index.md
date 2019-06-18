@@ -51,7 +51,7 @@ File successfully added:
 
 *Note: This file is at this exact moment still private.*
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 ```bash
 $> curl -X POST \
@@ -78,7 +78,7 @@ Output:
 {"shop":"0xffeF98e9de5524Eaf82A8DE88B031160f694a90A"}
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 ```bash
 $> curl -X POST \
@@ -106,7 +106,7 @@ Result:
 {"success":"true"}
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 ```bash
 $> curl -X POST \
@@ -162,7 +162,7 @@ Output:
 {"success":"true"}
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 ```bash
 $> curl -X POST \
@@ -188,7 +188,7 @@ Output:
 {"output":"/var/folders/f9/11wh9x9j31d75nxgwv2qsj3r0000gn/T/it-crowd.jpg"}
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 In order to read documents using the HTTP API you first need to request a token as follow:
 ```bash

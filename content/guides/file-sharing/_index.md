@@ -56,7 +56,7 @@ File successfully uploaded to IPFS storage.	{"meta": "QmZYSewpHNvdW1TTgska792QAT
 - `"meta"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
 - `"acl"` this is the file's ACL. A smart contract addr controlling all the access rules. You can use it [`leth acl grant`](#granting-read-access-to-the-private-file) cmd to grant permissions to other accounts
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 Alternative you could also do a HTTP API call:
 ```bash
@@ -103,7 +103,7 @@ This error is expected because the file owner never actually granted permission 
 
 Let's grant a read permission.
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 In order to read documents using the HTTP API you first need to request a token as follow:
 ```bash
@@ -171,7 +171,7 @@ PS: You can always run any command with `--help` flag to get explanation of all 
 leth acl grant --help
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 
 As it is explained above using the CLI, we could do the same using curl to grant
 read access to the user _0xnode2ethAddr0cb45782bf055e41813060e4ce89_: 
@@ -202,7 +202,7 @@ Example, let's grant an `admin` right to the Leth Node 2 account. With such a pr
 leth acl grant --nodeid=1 --network=sirius --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
-#### Using Curl (Alternately)
+#### Using Curl
 ```bash
 $> curl -X POST \
   http://localhost:9091/acl/grant \
