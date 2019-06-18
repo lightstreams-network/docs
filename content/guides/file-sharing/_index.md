@@ -5,8 +5,8 @@ weight = 1
 +++
 
 Once your Lightstreams node is fully synced and you own some PHT(or ETH),
-you can start distributing files! If you still don't have a lightstream node
-running locally and fully synchronize, follow [the instructions here](getting-started/quick-start/)
+you can start distributing files! If you still don't have a Lightstreams node
+running locally and fully synchronize, follow [the instructions here](/getting-started/quick-start/)
 
 ## Private File Sharing for dApps, content producers
 
@@ -21,7 +21,7 @@ Each file uploaded using Leth generates 2 IPFS files:
 1. The uploaded file itself. (`/tmp/secret_file.txt)
 1. A public metadata document(`meta`, in json format, describing the protected file
 
-### Adding a private file
+### # Adding a private file
 
 Given a file such as "/tmp/secret_file.txt", with content `Hello secret world`.
 
@@ -56,7 +56,24 @@ File successfully uploaded to IPFS storage.	{"meta": "QmZYSewpHNvdW1TTgska792QAT
 - `"meta"` this is the address of a public Meta file linking to your private file in a secure IPFS storage
 - `"acl"` this is the file's ACL. A smart contract addr controlling all the access rules. You can use it [`leth acl grant`](#granting-read-access-to-the-private-file) cmd to grant permissions to other accounts
 
-### Reading the private file
+#### Using Curl (Alternately)
+
+Alternative you could also do a HTTP API call:
+```bash
+$>  curl -X POST \
+  http://localhost:9091/storage/add \
+  -H 'Content-Type: multipart/form-data' \
+  -F owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 \
+  -F password=password \
+  -F file="@/tmp/secret_file.txt"
+
+{"meta":"QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf","acl":"0xc2DBC8CdAba2df432C821639B80302f0675D6f74"}
+```
+
+To do that you should have run your local Lightstreams node using `--https`
+to enable the HTTP API.
+
+### # Reading the private file
 
 Now you can tell your friend who is running another Lightstreams node on his computer to download your private file!
 
@@ -64,7 +81,7 @@ For testing proposed you may setup another Lightstreams node locally, using a di
 
 ```bash
 leth init --nodeid=2 --network=sirius
-leth run --nodeid=2 --network=sirius
+leth run --nodeid=2 --network=sirius [--https]
 
 ...wait a few minutes for a full sync...
 ```
@@ -86,7 +103,28 @@ This error is expected because the file owner never actually granted permission 
 
 Let's grant a read permission.
 
-### Granting read access to the private file
+#### Using Curl (Alternately)
+
+In order to read documents using the HTTP API you first need to request a token as follow:
+```bash
+$> curl -X POST \
+  http://localhost:9092/user/signin \
+  -H 'Content-Type: application/json' \
+  -d '{"account":"0xnode2ethAddr0cb45782bf055e41813060e4ce89","password":"password"}'
+
+{ token: "eyJibG9ja2NoYWluIjoiRVRIIiwiZX..." }
+```
+
+Then we use the token to request the file access
+```bash
+$> curl -X GET \
+  'http://localhost:9092/storage/fetch?meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&token=eyJibG9ja2NoYWluIjoiRVRIIiwiZX...' \
+  --output /tmp/secret_file_copy.txt
+  
+{"error": {"code": "err_cli", "message": "unable to download file to IPFS storage. Error: ipfs cat cmd timed out"}
+```
+
+### # Granting read access to the private file
 
 Only the owner of the file can grant access to its files. In this case we go back to the original terminal
 where owner account was set and execute the following command:
@@ -133,7 +171,28 @@ PS: You can always run any command with `--help` flag to get explanation of all 
 leth acl grant --help
 ```
 
-### Granting admin access to the private file
+#### Using Curl (Alternately)
+
+As it is explained above using the CLI, we could do the same using curl to grant
+read access to the user _0xnode2ethAddr0cb45782bf055e41813060e4ce89_: 
+```bash
+$> curl -X POST \
+  http://localhost:9091/acl/grant \
+  -H 'Content-Type: application/json' \
+  -d '{"acl":"0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E", "owner":"0xa92e3705e6d70cb45782bf055e41813060e4ce07", "password":"password", "to":"0xnode2ethAddr0cb45782bf055e41813060e4ce89", "permission": "read"}'
+
+{"is_granted":"true"}
+```
+
+Then we try again to fetch the file using same token obtained above:
+```bash
+$>  curl -X GET \
+  'http://localhost:9092/storage/fetch?meta=QmZYSewpHNvdW1TTgska792QAT7Yd6yxZAoybpYFskTZSf&token=eyJibG9ja2NoYWluIjoiRVRIIiwiZX...' \
+  --output /tmp/secret_file_copy.txt
+```
+this time no error output is returned and file content is stored at `/tmp/secret_file_copy.txt`.
+
+### # Granting admin access to the private file
 
 Going step further. You can also grant ``admin` rights to other accounts, devices so they can further have the privileges of granting read/admin access to other users.
 
@@ -143,7 +202,17 @@ Example, let's grant an `admin` right to the Leth Node 2 account. With such a pr
 leth acl grant --nodeid=1 --network=sirius --permission=admin --acl=0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E --owner=0xa92e3705e6d70cb45782bf055e41813060e4ce07 --to=0xnode2ethAddr0cb45782bf055e41813060e4ce89
 ```
 
-### Reading the public Meta file
+#### Using Curl (Alternately)
+```bash
+$> curl -X POST \
+  http://localhost:9091/acl/grant \
+  -H 'Content-Type: application/json' \
+  -d '{"acl":"0x2F15B633b4bC41BdFBBD8AAf2Be7Dae958D27C7E", "owner":"0xa92e3705e6d70cb45782bf055e41813060e4ce07", "password":"password", "to":"0xnode2ethAddr0cb45782bf055e41813060e4ce89", "permission": "admin"}'
+
+{"is_granted":"true"}
+```
+
+### # Reading the public Meta file
 
 In case you want to get information about the privately stored file, you can do so using the `leth storage meta` command.
 
