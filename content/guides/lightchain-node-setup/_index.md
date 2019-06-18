@@ -1,7 +1,7 @@
 +++
-title = "Mainnet Lightchain Node"
+title = "Lightchain Node"
 toc = true
-weight = 3
+weight = 1
 +++
 
 In this section, we will explain the steps to install and synchronize
@@ -40,14 +40,18 @@ chmod a+x /usr/local/bin/lightchain
 In case you prefer to compile your own version of `lightchain` you just need to
 follow the instructions at [this repository](https://github.com/lightstreams-network/lightchain).
 
-## Run Lightstreams node
+## Run Lightchain node
 
 Once `lightchain` is installed we can proceed with the initialization and synchronization
 of a new lightstreams node.
 
-Lightstreams implements two networks: `mainnet` and a testnet called `sirius`.
-At the minute `lightchain` is connecting by default to `mainnet` as our team is still working on
-the launch of the mainnet.
+Lightstreams implements three different networks: 
+- **mainnet**: Main company network 
+- **sirius**: Test network, [free tokens](/getting-started/quick-start/#get-free-testing-tokens).
+- **standalone**: Isolated-local test network. 
+
+At the minute `lightchain` is connecting by default to `mainnet`. For testing proposes we
+recommend to use `sirius` or `standalone`.
 
 ### Node initialization
 
@@ -55,7 +59,7 @@ To initialise a new blockchain you need to run lightchain init and choose
 a local path where blockchain files are going to be stored.
 
 ```
-lightchain init --datadir="${HOME}/.lightstreams-mainnet" --mainnet
+lightchain init --datadir="${HOME}/.lightchain" [--mainnet|--sirius|--standalone]
 ```
 
 
@@ -63,13 +67,19 @@ lightchain init --datadir="${HOME}/.lightstreams-mainnet" --mainnet
 
 To run a lightchain node you only need to run the following command:
 ```
-lightchain run --datadir="${HOME}/.lightstreams-mainnet"
+lightchain run --datadir="${HOME}/.lightchain"
 ```
 
-After the command is executed the Lightstreams node will proceed with the synchronization.
+After the above ommand is executed the Lightstreams node will proceed with the synchronization. It would take
+up to several minutes, so it is time to take request your first [__free tokens__](/getting-started/quick-start/#get-free-testing-tokens)
+for _Sirius_ network.
+
 Once the node is synchronized we should leave node running in order to interact with the blockchain.
 
-Lightstreams also provides a [block explorer](https://explorer.mainnet.lightstreams.io) to see which is the current state of the blockchain.
+Lightstreams also provides two block explorers, one for the [MainNet](https://explorer.mainnet.lightstreams.io) 
+and another for [Sirius](https://explorer.sirius.lightstreams.io), to see which is the current state of the blockchain. 
+The block explorer code is [open-sourced](https://github.com/lightstreams-network/lightchain-explorer), so in case you decide to use 
+_standalone_ you could also run a local instance of it.
 
 #### Help
 
@@ -88,7 +98,7 @@ To enable those RPC endpoints, we need to specify the APIs we want to enable and
 include `--rpc --rpcapi eth,net,web3,personal,admin`. In case you want to enable the WebSocket endpoints you have to also use`--ws`
 
 ```
-lightchain run --datadir="${HOME}/.lightstreams-mainnet" --rpc --rpcapi eth,net,web3,personal,admin --ws
+lightchain run --datadir="${HOME}/.lightchain" --rpc --rpcapi eth,net,web3,personal,admin --ws
 ```
 
 By default RPC API is exposed over port _`:8545`_ and WebSocket over port _`:8546`_.
@@ -96,7 +106,7 @@ In case you want to specify a different port, you may use the following flags
 `--rpcport ${RPC_PORT}` or `--wsport ${WS_PORT}` respectively.
 
 In addition to those, IPC Unix socket is always enabled and you can find it at
-`${HOME}/.lightstreams-mainnet/database/geth.ipc` (according to the values used on above example)
+`${HOME}/.lightchain/database/geth.ipc` (according to the values used on above example)
 
 ### Example
 

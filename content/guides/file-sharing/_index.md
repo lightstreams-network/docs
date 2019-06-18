@@ -1,7 +1,7 @@
 +++
 title = "Private file sharing"
 toc = true
-weight = 1
+weight = 2
 +++
 
 Once your Lightstreams node is fully synced and you own some PHT(or ETH),

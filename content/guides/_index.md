@@ -8,7 +8,7 @@ This section includes specific guides for the integration and usage of Lightstre
 how to run your local lightchain node and how to launch your first decentralize eshop using
 our Smart Vault.
 
-- [Mainnet node setup](/guides/mainnet-node-setup)
+- [Lightchain node setup](/guides/Lightchain-node-setup)
 - [Private file sharing](/guides/file-sharing)
 - [Peer-to-peer ecommerce](/guides/peer-to-peer-ecommerce)
 - [MetaMask integration](/guides/metamask-integration)
