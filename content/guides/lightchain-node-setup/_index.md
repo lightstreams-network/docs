@@ -1,5 +1,5 @@
 +++
-title = "Lightchain Node"
+title = "Lightchain Node Setuo"
 toc = true
 weight = 1
 +++
