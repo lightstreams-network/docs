@@ -6,11 +6,11 @@ weight = 5
 
 ## Introduction
 
-We're going to deploy an Ethereum-compatible Smart Contract on Sirius (the Lightstreams network testnet). 
+We're going to deploy an Ethereum-compatible Smart Contract on Sirius (the Lightstreams test network). 
 
 ### Background
 
-Lightstreams network is a fully Ethereum-compatible network. Every tool, manual, or resource that works on the Ethereum network should also work on the Ligthstreams network. 
+Lightstreams network is a fully Ethereum-compatible network. Every tool, manual, or resource that works on Ethereum should also work on the Ligthstreams network. If something doesn't work or if you are blocked, [please let us know on via our support chat on the website](https://lightstreams.network)!
 
 In this section we are going to use our experience to write some simple instructions to deploy your first smart contract into Lightstreams blockchain.
 
@@ -27,14 +27,9 @@ We recommend having a local node to get a better development experience.
 
 ## Solidity
 
-**Solidity** is an object-oriented, high-level language for 
-implementing smart contracts. You can read more about this particular programming
-language in the [official documentation](https://solidity.readthedocs.io/).
+**Solidity** is an object-oriented, high-level language for implementing smart contracts. You can read more about this particular programming language in the [official documentation](https://solidity.readthedocs.io/).
 
-There are pluggings to support Solidity code for most of the popular IDE
-such as _JetBrains IDEA_, _Sublime Text_ or _emacs_. Also you can find a very good
-online editor provided by Ethereum project called [Remix](https://remix.ethereum.org). 
-Remix also supports testing, debugging and deploying of smart contracts and much more.
+There are pluggings to support Solidity code for most of the popular IDE such as _JetBrains IDEA_, _Sublime Text_ or _emacs_. Also you can find a very good online editor provided by Ethereum project called [Remix](https://remix.ethereum.org). Remix also supports testing, debugging and deploying of smart contracts and much more.
 
 For testing propose we are going to write a very simple `HelloWorld.sol`:
 ```solidity
@@ -66,8 +61,7 @@ How do we compile our smart contract? There are several alternatives that we wil
 Solidity project provides a binary compiler, _solc_, to compile solidity code. You can find
 instructions about how to install it on every popular OS in their [documentation](https://solidity.readthedocs.io/en/latest/installing-solidity.html).
 
-Once you completed the installation steps you should be capable to run the following command on a terminal
-to obtain the compiler version installed.
+Once you completed the installation steps you should be capable to run the following command on a terminal to obtain the compiler version installed.
 
 ```bash
 $> solc --version
@@ -76,8 +70,7 @@ solc, the solidity compiler commandline interface
 Version: 0.5.0+commit.1d4f565a.Linux.g++
 ```
 
-Assuming we stored our HelloWorld example in `/tmp/example/helloworld.sol`, first we are going
-to create a destination folder for the _build_ elements:
+Assuming we stored our HelloWorld example in `/tmp/example/helloworld.sol`, first we are going to create a destination folder for the _build_ elements:
 ```bash
 $> mkdir /tmp/example/build
 ```
@@ -87,8 +80,7 @@ Then, we execute the next:
 $> solc --abi --bin /tmp/example/helloworld.sol -o /tmp/example/build/ --overwrite
 ```
 
-As the result from the above command it was generated two files, one containing the ABI representation
-of the contract `HelloBlockchainWorld.abi` and another one with the bytecode `HelloBlockchainWorld.bin`.
+As the result from the above command it was generated two files, one containing the ABI representation of the contract `HelloBlockchainWorld.abi` and another one with the bytecode `HelloBlockchainWorld.bin`.
 ```bash
 /tmp/example/build/
 ├── HelloBlockchainWorld.abi
@@ -97,8 +89,7 @@ of the contract `HelloBlockchainWorld.abi` and another one with the bytecode `He
 
 ### Option 2: Remix
 
-Another alternative is to use the online tool of Remix. For that we
-need to:
+Another alternative is to use the online tool of Remix. For that, we need to:
 1. Paste our _helloworld.sol_ code
 2. Click on _Start to compile_ and wait for compilation to finish.
 3. Click on _ABI_ and paste the clipboard content into a file named `HelloBlockchainWorld.abi`.
@@ -108,12 +99,9 @@ need to:
 
 ### Option 3: NodeJS & Truffle
 
-Truffle is a testing framework for Ethereum written in javascript. Truffle 
-provides a full set of tools to compile, deploy and debug smart contracts 
-using the Ethereum Virtual Machine (EVM). 
+Truffle is a testing framework for Ethereum written in javascript. Truffle  provides a full set of tools to compile, deploy and debug smart contracts using the Ethereum Virtual Machine (EVM). 
 
-To install truffle, and assuming you already got **npm** installed in your system, 
-you only need to run the follow:
+To install truffle, and assuming you already got **npm** installed in your system, you only need to run the follow:
 
 ```bash
 $> npm install -g truffle
@@ -133,10 +121,7 @@ Now you should have the following folder structure under `/tmp/example/truffle`
 ├── test
 └── truffle-config.js
 ```
-inside `truffle-config.js` you have to define which version of solidity compiler
-you want to use, along with other solidity options, but for now we are only going
-to define a fixed version of solidity according to the version we defined in the smart contract 
-implementation
+inside `truffle-config.js` you have to define which version of solidity compiler you want to use, along with other solidity options, but for now we are only going to define a fixed version of solidity according to the version we defined in the smart contract implementation
 
 ```
 ...
