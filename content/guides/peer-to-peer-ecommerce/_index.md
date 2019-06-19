@@ -1,7 +1,7 @@
 +++
 title = "Ecommerce"
 toc = true
-weight = 2
+weight = 3
 +++
 
 If you followed the [Private File Sharing](/guides/file-sharing/) tutorial you learned how to obtain free PHTs and how to distribute files in peer-to-peer manner.
