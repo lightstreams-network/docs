@@ -1,12 +1,10 @@
 +++
-title = "Lightchain Node Setuo"
+title = "Lightchain Node Setup"
 toc = true
 weight = 1
 +++
 
-In this section, we will explain the steps to install and synchronize
-a Lightstreams PoA blockchain node. Moreover, as part of the functionalities
-required by token exchanges, we will be proving examples of how to interact with Lightstreams blockchain in order to create accounts, transfer tokens or fetch tx receipts.
+In this section, we will explain the steps to install and synchronize a Lightstreams blockchain node. Moreover, as part of the functionalities are required to transfer tokens between user account, we will be providing examples of how to interact with the Lightstreams blockchain in order to create accounts, transfer tokens, and fetch transaction receipts.
 
 ## Installation
 
@@ -70,7 +68,7 @@ To run a lightchain node you only need to run the following command:
 lightchain run --datadir="${HOME}/.lightchain"
 ```
 
-After the above ommand is executed the Lightstreams node will proceed with the synchronization. It would take
+After the above command is executed the Lightstreams node will proceed with the synchronization. It would take
 up to several minutes, so it is time to take request your first [__free tokens__](/getting-started/quick-start/#get-free-testing-tokens)
 for _Sirius_ network.
 
