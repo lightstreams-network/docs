@@ -11,5 +11,5 @@ our Smart Vault.
 - [Lightchain node setup](/guides/lightchain-node-setup)
 - [Private file sharing](/guides/file-sharing)
 - [Peer-to-peer ecommerce](/guides/peer-to-peer-ecommerce)
-- [Deploy a Smart Contract](/guides/deploy-smart-contract)
 - [Metamask integration](/guides/metamask-integration)
+- [Deploy a Smart Contract](/guides/deploy-smart-contracts)
