@@ -4,34 +4,32 @@ toc = true
 weight = 5
 +++
 
-Lightstreams goal is to empower developers to create new dApps by the usage of our technology,
-but beside a fast-scalable blockchain and a solid SmartVault SDK, one of the most essential 
-pieces to implement new dApps are the Smart Contracts.  
+## Introduction
 
-Lightstreams network is a fully Ethereum compatible network, therefore every tool
-or manual written for ethereum is applicable also for lightstreams blockchain. 
+We're going to deploy an Ethereum-compatible Smart Contract on Sirius (the Lightstreams network testnet). 
 
-In this section we are going to use our experience to write some simple instructions to deploy your 
-first smart contract into Lightstreams blockchain.
+### Background
+
+Lightstreams network is a fully Ethereum-compatible network. Every tool, manual, or resource that works on the Ethereum network should also work on the Ligthstreams network. 
+
+In this section we are going to use our experience to write some simple instructions to deploy your first smart contract into Lightstreams blockchain.
 
 ### Node Initialization
 
-Firstly, in order to deploy a smart contract we need to have a full synchronized node running locally. 
-In case you didn't do it yet, see [these instructions](/guides/lightchain-node-setup/).
+First, in order to deploy a smart contract we need to have a fully-synchronized node running locally. In case you didn't do it yet, see [the lightchain node setup guide](/guides/lightchain-node-setup/).
 
-Alternatively, you could also connect to our open RPC endpoints:
+Alternatively, you could also connect to our open via the HTTP-RPC endpoints (see the [HTTP API](https://docs.lightstreams.network/api-docs):
 
-- MainNet: `https://node.mainnet.lightstreams.io`
-- Sirius: `https://node.mainnet.lightstreams.io` 
+- Mainnet: `https://node.mainnet.lightstreams.io`
+- Testnet: `https://node.sirius.lightstreams.io` 
 
-Although we recommend you to have your local node for a better and more complete 
-experience.
+We recommend having a local node to get a better development experience.
 
 ## Solidity
 
-As you probably already know **Solidity** is an object-oriented, high-level language for 
-implementing smart contracts. You can see more about this particular programming
-language within their [official documentation](https://solidity.readthedocs.io/).
+**Solidity** is an object-oriented, high-level language for 
+implementing smart contracts. You can read more about this particular programming
+language in the [official documentation](https://solidity.readthedocs.io/).
 
 There are pluggings to support Solidity code for most of the popular IDE
 such as _JetBrains IDEA_, _Sublime Text_ or _emacs_. Also you can find a very good
@@ -54,19 +52,19 @@ contract HelloBlockchainWorld {
 
 ## Compilation
 
-In order to deploy and then interact with the written smart contract we need to 
+In order to deploy and then interact with the written smart contract, we need to 
 compile it to be deployed into our EVM (Ethereum Virtual Machine). 
 
-As a result of the compilation we are obtaining two elements:
+As a result of the compilation, you should get two things:
 - **ABI**: Application Binary Interface, is the standard way to interact with contracts in the Ethereum ecosystem, both from outside the blockchain and for contract-to-contract interaction.
 - **Bytecode**: Assembly representation of the contract in hexadecimal format. 
 
-How do we compile our smart contract? There are several alternatives as you will see next.
+How do we compile our smart contract? There are several alternatives that we will show you next.
 
 ### Option 1: Solidity Compiler
 
-Solidity project provides a binary compiler, _solc_, to compile solidity code. You can find clear
-instructions about how to install it on every popular OS within their [documentation](https://solidity.readthedocs.io/en/latest/installing-solidity.html).
+Solidity project provides a binary compiler, _solc_, to compile solidity code. You can find
+instructions about how to install it on every popular OS in their [documentation](https://solidity.readthedocs.io/en/latest/installing-solidity.html).
 
 Once you completed the installation steps you should be capable to run the following command on a terminal
 to obtain the compiler version installed.
@@ -108,7 +106,7 @@ need to:
 
 ![login](/img/guides/solc_remix_edited.png)
 
-### Option 3: NodeJS - Truffle
+### Option 3: NodeJS & Truffle
 
 Truffle is a testing framework for Ethereum written in javascript. Truffle 
 provides a full set of tools to compile, deploy and debug smart contracts 
@@ -236,24 +234,20 @@ $> geth attach http://localhost:8545
 
 *Note: Every following statement is executed on geth terminal*
 
-We assign the content of the file generated during the compilation of the smart contract
- to two variables. 
+We assign the content of the file generated during the compilation of the smart contract to two variables. 
 ```javascript
 > var bin = <"HelloBlockchainWorld.bin" file content>
 > var abi = <"HelloBlockchainWorld.abi" file content>
 ```
 
-Create a contract template object based on the _abi_ and calculate the estimated gas
-for the transaction of deployment:
+Create a contract template object based on the _abi_ and calculate the estimated gas for the transaction of deployment:
 
 ```javascript
 var contractTemplate = web3.eth.contract(abi);
 var estimatedGas = eth.estimateGas({data: "0x" + bin})
 ```
 
-Send contract deploy transaction, The contract deployment is an asynchronous call therefore
-in order to track the process, we will add a callback function which logs the execution
-progress:
+Send contract deploy transaction, The contract deployment is an asynchronous call therefore in order to track the process, we will add a callback function which logs the execution progress:
 
 ```javascript
 contractTemplate.new({from: "0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e", data: "0x" + bin, gas: estimatedGas}, 
@@ -272,9 +266,7 @@ contractTemplate.new({from: "0xc916cfe5c83dd4fc3c3b0bf2ec2d4e401782875e", data: 
  
 ### Option 2: Remix
 
-Remix also integrates the utilities required to deploy and interact with smart contracts. 
-In case you want to connect to the node running on your local machine you will need to 
-authorized by the usage of the following flags `--rpcvhost` and `--rpccorsdomain`:
+Remix also integrates the utilities required to deploy and interact with smart contracts.  In case you want to connect to the node running on your local machine you will need to authorized by the usage of the following flags `--rpcvhost` and `--rpccorsdomain`:
 
 ```bash
 $> lightchain run --datadir=${HOME}  --rpc --rpcaddr 0.0.0.0 -rpcapi eth,net,web3,personal,debug --rpccorsdomain=* --rpcvhosts=localhost
@@ -291,10 +283,7 @@ the one on the next screenshot.
 
 ### Option 3: Truffle
 
-In `truffle-config.js` you need to update uncomment the _development_ network, and modify it if it is needed,
-to connect to a running ethereum node. Also we indicate which __from__ account is going to be 
-use as default message sender for every transaction. Also it is important to mention that 
-
+In `truffle-config.js` you need to update the _development_ network and modify it as required, to connect to a running ethereum node. Also we indicate which __from__ account is going to be use as default message sender for every transaction. 
 
 ```
 ...
@@ -310,7 +299,7 @@ use as default message sender for every transaction. Also it is important to men
   }
 ...
 ```
-*Note: Lightchain networks use 500 gwei as _gasPrice_*
+*SUPER IMPORTANT NOTE: Lightchain networks use 500 gwei as _gasPrice_*
 
 We create a new migration file `/migrations/2_hello_world.js` with the following code:
 ```javascript
@@ -356,7 +345,6 @@ From the output above we can see that our HelloWorld smart contract was deployed
 at the address _0x0f5d5bEb0766C7a26198Bf82EBF1B2df3dEA09e5_ and the deployment cost 
 was _0.052 ETH_.
 
-
-
+Congratulations! You have just deployed your first Lightstreams Smart Contract!! Well done! 
 
 
