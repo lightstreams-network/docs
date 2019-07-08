@@ -8,6 +8,10 @@ weight = 1
 
 [Code](https://github.com/lightstreams-network/example-nodejs)
 
+## Live Demo
+
+[https://demo.nodejs.lightstreams.io](https://demo.nodejs.lightstreams.io)
+
 ## Introduction
 
 Lightstreams Smart Vault Dashboard app showcase an example of a decentralize app (Dapp)
