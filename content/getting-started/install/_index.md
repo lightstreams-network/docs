@@ -68,8 +68,8 @@ wget "https://s3.eu-central-1.amazonaws.com/lightstreams-public/lightchain/lates
 
 IPFS is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files.
 
-Lightstreams has enhanced original implementation of IPFS to bring a to permissioned
-layer which allows users to control the access to after content is being distributed.
+Lightstreams enhances the original implementation of IPFS with a smart contract controlled permissions
+layer that for managing access to distributed content. 
 
 #### How to install
 
