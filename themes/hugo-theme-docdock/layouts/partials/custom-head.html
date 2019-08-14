@@ -1,2 +1,16 @@
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127729085-3"></script>
+  <script>
+    function initGA() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-127729085-3');
+      console.log('inited');
+    }
+
+    if (window.location.hostname !== 'localhost') {
+      initGA();
+    }
+  </script>
