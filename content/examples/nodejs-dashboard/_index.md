@@ -10,7 +10,8 @@ weight = 1
 
 ## Live Demo
 
-[https://demo.nodejs.lightstreams.io](https://demo.nodejs.lightstreams.io)
+Node1 -> [https://demo.nodejs.lightstreams.io](https://demo.nodejs.lightstreams.io)
+Node2 -> [https://demo.nodejs-2.lightstreams.io](https://demo.nodejs-2.lightstreams.io)
 
 ## Introduction
 

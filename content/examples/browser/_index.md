@@ -8,6 +8,10 @@ weight = 1
 
 [Example Pure Browser Application using Lightstreams](https://github.com/lightstreams-network/example-browser)
 
+## Live Demo
+
+[https://demo-browser.lightstreams.io/](https://demo-browser.lightstreams.io/)
+
 ## Introduction
 
 This example decentralized application (DApp) demonstrates how two or more peers can connect together and securely share private content together without the need for a central server. You can point the application to your local Lightstreams Node (localhost:9000). By default it connects to our public gateway on the sirius testnet, [https://gateway.sirius.lightstreams.io](https://gateway.sirius.lightstreams.io).
